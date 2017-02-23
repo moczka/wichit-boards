@@ -1,0 +1,28 @@
+{
+  "boards": [
+      {
+        "category": {
+          "title": "",
+          "subtitle": "",
+          "description": "",
+          "warning": "",
+          "note": {
+            "title": "",
+            "description": ""
+          },
+          "meals": [
+            {
+              "meal": {
+
+              }
+            },
+            {
+              "meal": {
+
+              }
+            }
+          ]
+        }
+      }
+  ]
+}

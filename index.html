@@ -9,27 +9,38 @@
 
   </div>
   <script id="categoryTemplate" type="text/template">
-
       <div class="category">
         <header class="category-header">
           <h2 class="category-title">{{category.title}}</h2>
-          <h3 class="category-subtitle">{{category.subheading}}</h3>
-          <p class="category-description">{{category.description}}</p>
+          <% if(category.subtitle){ %>
+            <h3 class="category-subtitle">{{category.subtitle}}</h3>
+          <% } %>
+          <% if(category.description){ %>
+            <p class="category-description">{{category.description}}</p>
+          <% } %>
         </header>
         <ul class="category-meals">
-
+          <!-- MEAL LIST GOES HERE -->
         </ul>
         <div class="category-note">
-          header.category-note
-
+          <h3>{{category.note.title}}</h3>
+          <p>{{category.note.description}}</p>
         </div>
         <div class="food-warning">
-
+          <p>{{category.warning}}</p>
         </div>
       </div>
+  </script>
+  <script id="mealTemplate" type="text/template">
 
+      <li class="meal">
+        <h3 class="meal-title {{ meal.special? 'meal-is-special' : '' }}">
+          {{ meal.title }}
+        </h3>
+        <p class="meal-description">{{ meal.description }}</p>
+        <span class="meal-price">{{ meal.price }}</span>
+      </li>
 
   </script>
-  <script id="mealTemplate" type="text/template"></script>
 </body>
 </html>

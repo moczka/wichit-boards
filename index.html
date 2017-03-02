@@ -3,44 +3,70 @@
 <head>
   <title>Wichit Boards</title>
   <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/modules/category/category.css">
+  <link rel="stylesheet" href="styles/modules/meal/meal.css">
+  <script src="http://underscorejs.org/underscore-min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="npm-modules/backbone/backbone.js"></script>
+  <script src="npm-modules/backbone.localstorage/backbone.localStorage.js"></script>
+  <script src="/js/main.js"></script>
 </head>
 <body>
   <div id="app" class="app-container">
-
   </div>
   <script id="categoryTemplate" type="text/template">
       <div class="category">
         <header class="category-header">
           <h2 class="category-title">{{category.title}}</h2>
-          <% if(category.subtitle){ %>
-            <h3 class="category-subtitle">{{category.subtitle}}</h3>
+          <% if(category.subtitle !== undefined ){ %>
+            <h3 class="category-title category-subtitle">{{category.subtitle}}</h3>
           <% } %>
-          <% if(category.description){ %>
+          <% if( category.description !== undefined){ %>
             <p class="category-description">{{category.description}}</p>
           <% } %>
         </header>
         <ul class="category-meals">
           <!-- MEAL LIST GOES HERE -->
         </ul>
-        <div class="category-note">
-          <h3>{{category.note.title}}</h3>
-          <p>{{category.note.description}}</p>
-        </div>
-        <div class="food-warning">
-          <p>{{category.warning}}</p>
-        </div>
+        <% if(category.note){ %>
+          <div class="category-box category-note">
+            <h3>{{category.note.title}}</h3>
+            <p>{{category.note.description}}</p>
+          </div>
+        <% } %>
+        <% if(category.warning){ %>
+          <div class="category-box food-warning">
+            <p>{{category.warning}}</p>
+          </div>
+        <% } %>
       </div>
   </script>
   <script id="mealTemplate" type="text/template">
 
       <li class="meal">
-        <h3 class="meal-title {{ meal.special? 'meal-is-special' : '' }}">
-          {{ meal.title }}
-        </h3>
-        <p class="meal-description">{{ meal.description }}</p>
-        <span class="meal-price">{{ meal.price }}</span>
+        <div class="meal-content cf">
+          <h3 class="meal-title {{ meal.special? 'meal-is-special' : '' }}">{{ meal.title }}</h3>
+          <% if( meal.description ){ %>
+            <p class="meal-description">{{ meal.description }}</p>
+          <% } %>
+        </div>
+        <div class="edit">
+          <input type="text" class="meal-title meal-edit-title " value="{{ meal.title }}">
+          <% if( meal.description ){ %>
+            <textarea rows="auto" class="meal-description meal-edit-description">{{ meal.description }}</textarea>
+          <% } %>
+        </div>
+        <% if( meal.options ){ %>
+          <ul class="meal-options"></ul>
+        <% } %>
       </li>
 
+  </script>
+  <script id="optionTemplate" type="text/template">
+    <li>
+      <h4 class='meal-option-title'>{{ option.title }}</h4>
+      <p class="meal-option-description">{{ option.description }}</p>
+    </li>
   </script>
 </body>
 </html>

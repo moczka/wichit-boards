@@ -1,0 +1,102 @@
+.meal{
+  border-top: 3px solid #ffffcc;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  letter-spacing: -1px;
+  padding: 0.8em 0;
+  color: #ffffcc;
+}
+.meal-title{
+  display: inline-block;
+  font-size: 1.5em;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: #d62222;
+  float: left;
+  line-height: 0.55;
+  text-transform: inherit;
+}
+.meal-title:after{
+  content: ": ";
+  padding-left: 3px;
+}
+
+.meal-price{
+  white-space: nowrap;
+}
+.meal-price:before{
+  display: inline-block;
+  content: "$";
+  margin-left: 3px;
+}
+
+.meal-description{
+  font-size: inherit;
+  font-style: inherit;
+  text-transform: inherit;
+  color: inherit;
+}
+
+.meal-options{
+  margin-top: 0.6em;
+  clear: both;
+}
+.meal-option-title{
+  display: inline-block;
+  font-size: 1.3em;
+  font-weight: 200;
+  text-transform: inherit;
+  line-height: 0.8em;
+  float: left;
+  padding-right: 0.3em;
+}
+.meal-option-title:after{
+  content: ": ";
+  padding-left: 3px;
+}
+.meal-option-description{
+  margin-bottom: 0.5em;
+  clear: right;
+}
+
+/* SUBMODULES */
+.meal-edit-description{
+  background-color: transparent;
+  clear: both;
+  float: none;
+}
+.meal-edit-title{
+  display: block;
+  background-color: transparent;
+  clear: both;
+  border: 1px solid #fff;
+  width: 60%;
+  float: none;
+  margin-bottom: 0.3em;
+}
+
+
+/* MODULES STATES */
+.meal.is-meal-editing > .meal-content{
+  display: none;
+}
+.meal.is-meal-editing > .edit{
+  display: block;
+}
+
+.meal-is-special{
+  position: relative;
+  padding-left: 1.3em;
+}
+
+.meal-is-special:before{
+  position: absolute;
+  content: "";
+  display: inline-block;
+  background: url(../../../assets/raster/wichit-logo.png) no-repeat bottom center;
+  background-size: 100% auto;
+  margin-right: 0.15em;
+  height: 1.15em;
+  width: 1.15em;
+  top: -0.34em;
+  left: 0;
+}

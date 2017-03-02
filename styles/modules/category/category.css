@@ -1,0 +1,52 @@
+.category{
+  color: #fff;
+  padding: 20px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  letter-spacing: -1px;
+}
+
+.category-header{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.category-title{
+  font-size: 2.3em;
+  font-family: Impact, sans-serif;
+
+}
+.category-subtitle{
+  font-size: 1.5em;
+}
+.category-description{
+  color: #ffffcc;
+  letter-spacing: -1px;
+  padding-bottom: 10px;
+}
+
+.category-box{
+  border-top: 3px solid #ffffcc;
+  padding: 0.6em 0em;
+  color: #ffffcc;
+}
+
+.category-note{
+  padding: 10px 0px;
+}
+
+.category-note > h3{
+  display: inline-block;
+  font-size: 1.5em;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: #d62222;
+}
+.category-note > h3:after{
+  content: ": ";
+  padding-left: 3px;
+}
+
+.food-warning > p{
+  font-size: 0.8em;
+}

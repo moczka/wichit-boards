@@ -7,10 +7,8 @@
   <link rel="stylesheet" href="styles/modules/meal/meal.css">
   <script src="http://underscorejs.org/underscore-min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <!--
   <script src="npm-modules/backbone/backbone.js"></script>
   <script src="npm-modules/backbone.localstorage/backbone.localStorage.js"></script>
--->
   <script src="/js/main.js"></script>
 </head>
 <body>
@@ -26,11 +24,6 @@
             <p class="category-description">{{category.description}}</p>
           <% } %>
         </header>
-        <div class="edit-box">
-            <input type="text" class="category-title category-edit-title" value="{{ category.title }}">
-            <input type="text" class="category-title category-subtitle category-edit-subtitle" value="{{ category.subtitle }}">
-            <textarea cols="30" rows="row" class="category-description category-edit-description">{{ category.description}}</textarea>
-        </div>
         <ul class="category-meals">
           <!-- MEAL LIST GOES HERE -->
         </ul>
@@ -46,20 +39,21 @@
           </div>
         <% } %>
       </div>
-
   </script>
   <script id="mealTemplate" type="text/template">
 
-      <li class="meal" draggable="false" data-category="{{ meal.from }}">
+      <li class="meal" draggable="true">
         <div class="meal-content cf">
           <h3 class="meal-title {{ meal.special? 'meal-is-special' : '' }}">{{ meal.title }}</h3>
           <% if( meal.description ){ %>
             <p class="meal-description">{{ meal.description }}</p>
           <% } %>
         </div>
-        <div class="edit-box">
+        <div class="edit">
           <input type="text" class="meal-title meal-edit-title " value="{{ meal.title }}">
+          <% if( meal.description ){ %>
           <textarea rows="auto" class="meal-description meal-edit-description">{{ meal.description }}</textarea>
+          <% } %>
         </div>
         <% if( meal.options ){ %>
           <ul class="meal-options"></ul>
@@ -73,8 +67,5 @@
       <p class="meal-option-description">{{ option.description }}</p>
     </li>
   </script>
-  <footer>
-    <a href="blob:http://127.0.0.1:8080/a7c278ed-03f2-4db8-9fd7-bd3313f89ffa" download="wichboards.json">DOWNLOAD HERE</a>
-  </footer>
 </body>
 </html>

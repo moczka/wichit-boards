@@ -28,6 +28,6 @@ var app = app || {};
 
    });
 
-   app.Categories = new Categories();
+    app.Categories = new Categories();
 
 })();

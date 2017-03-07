@@ -144,14 +144,14 @@
       {
         "category": {
           "title": "hot sandwiches",
-          "description": "served with pickles and house made chips. choose one dipping sauce. hand cut french fries 2.00 sweet potato fries 2.50",
+          "description": "served with pickles and house made chips. choose one dipping sauce. hand cut french fries 2.00 sweet potato fries 2.60,onion ring 2.85",
           "name": "hot-sandwiches",
           "page": 3,
           "meals": [
           	{
           		"meal": {
           			"title": "flat iron steak",
-          			"description": "certified angus steak, carmalized onions, poblano-kale slaw and smoked gouda cheese $0.99",
+          			"description": "certified angus steak, carmalized onions, poblano-kale slaw and smoked gouda cheese $11.99",
                 "special": true,
                 "from": "hot-sandwiches",
                 "order": 1
@@ -168,7 +168,7 @@
           	{
           		"meal": {
           			"title": "stonemill",
-          			"description": "ny strip sirloin, swiss, portabella mushroom, caramelized onions, roasted garlic aioli, pressed on house rustic 1",
+          			"description": "ny strip sirloin, swiss, portabella mushroom, caramelized onions, roasted garlic aioli, pressed on house rustic 11.99",
                 "from": "hot-sandwiches",
                 "order": 1
           		}
@@ -881,8 +881,8 @@
                       "special": true,
                       "from": "beverages",
                       "order": 1,
-                      "page": 5,
+                      "page": 5
                 		}
                 	}
-  ]
+          ]
 }

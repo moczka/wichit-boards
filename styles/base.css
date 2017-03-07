@@ -52,7 +52,17 @@ textarea{
 /* Base wide modules */
 
 .edit{
-  display:none;
+  display: none;
+}
+.edit-box{
+  display: none;
+}
+.edit-box > input, .edit-box > textarea{
+  display: block;
+  background-color: transparent;
+  margin: 0.2em 0;
+  padding: 0;
+  clear: both;
 }
 
 /* HACKS */

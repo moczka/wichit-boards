@@ -14,7 +14,7 @@
 .category-title{
   font-size: 2.3em;
   font-family: Impact, sans-serif;
-
+  color: #fff;
 }
 .category-subtitle{
   font-size: 1.5em;
@@ -23,6 +23,9 @@
   color: #ffffcc;
   letter-spacing: -1px;
   padding-bottom: 10px;
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: inherit;
 }
 
 .category-box{
@@ -49,4 +52,21 @@
 
 .food-warning > p{
   font-size: 0.8em;
+}
+
+/* MODULE STATES */
+
+.is-category-editing > .category-header{
+  display: none;
+}
+.is-category-editing > .edit-box{
+  display: block;
+}
+
+.category-meals:hover:after{
+  font-size: 0.5em;
+  display: block;
+  content: "ADD";
+  padding: 0.3em 1.0em;
+  background-color: #fff;
 }

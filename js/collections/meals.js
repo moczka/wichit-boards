@@ -14,7 +14,14 @@ var app = app || {};
 
     parse: function(data){
 
-      return data.meals;
+      //compress all meals into one array from the JSON data
+      var meals = data.boards.reduce(function(accum, current){
+
+        return accum.concat(current.category.meals);
+
+      }, data.boards[0].category.meals);
+
+      return meals;
 
     },
 

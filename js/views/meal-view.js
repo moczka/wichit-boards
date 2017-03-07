@@ -2,7 +2,7 @@ var app = app || {};
 
 (function(){
 
-  var app.Meal = Backbone.View.extend({
+  var app.MealView = Backbone.View.extend({
 
     tagName: 'li',
     className: 'meal',

@@ -2,7 +2,7 @@ var app = app || {};
 
 (function(){
 
-  app.Category = Backbone.Model.extend({
+  app.CategoryModel = Backbone.Model.extend({
 
     defaults: {
       title: "Category Description",

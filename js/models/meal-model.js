@@ -2,7 +2,7 @@ var app = app || {};
 
 (function(){
 
-  app.Meal = Backbone.Model.extend({
+  app.MealModel = Backbone.Model.extend({
 
     defaults: {
       title: "",

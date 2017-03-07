@@ -2,9 +2,10 @@
   border-top: 3px solid #ffffcc;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   letter-spacing: -1px;
-  padding: 0.8em 0;
+  padding: 0.6em 0;
   color: #ffffcc;
 }
+
 .meal-title{
   display: inline-block;
   font-size: 1.5em;
@@ -12,7 +13,7 @@
   font-weight: 300;
   color: #d62222;
   float: left;
-  line-height: 0.55;
+  line-height: 0.90;
   text-transform: inherit;
 }
 .meal-title:after{
@@ -79,7 +80,7 @@
 .meal.is-meal-editing > .meal-content{
   display: none;
 }
-.meal.is-meal-editing > .edit{
+.meal.is-meal-editing > .edit-box{
   display: block;
 }
 
@@ -97,6 +98,6 @@
   margin-right: 0.15em;
   height: 1.15em;
   width: 1.15em;
-  top: -0.34em;
+  top: -0.20em;
   left: 0;
 }

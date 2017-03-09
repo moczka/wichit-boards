@@ -1,25 +1,50 @@
 window.onload = function(){
 
-    var ID = 0;
+    var ID = 1000;
 
     _.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
+
+    var currentPage = 0;
 
     var $app = $('#app'),
         jsonData,
         ajax = $.get('json/categories.json');
 
-    var templates = {
-        category: _.template($('#categoryTemplate').html()),
-        meal: _.template($('#mealTemplate').html()),
-        option: _.template($('#optionTemplate').html())
+    var toolbar = {
+        $nav: $('.toolbar-nav'),
+        $save: $('.toolbar-save'),
+        $configureTools: $('.toolbar-configure')
     };
 
-    window.getJSON = exportData;
+    var category = {
+        $header: $app.find('.category-header'),
+        $meals: $app.find('.category-meals'),
+        $note: $app.find('.category-note'),
+        $warning: $app.find('.food-warning')
+    };
+
+    var templates = {
+        categoryHeader: _.template($('#category-header-template').html()),
+        meal: _.template($('#meal-template').html()),
+        option: _.template($('#meal-option-template').html()),
+        categoryNote: _.template($('#category-note-template').html()),
+        categoryWarning: _.template($('#category-warning-template').html())
+    };
+
+    window.getJSON = addId;
 
     ajax.then(function(){
       jsonData = ajax.responseJSON;
-      attach();
+      attach(currentPage);
     });
+
+    //add listeners
+
+    toolbar.$save.delegate('a', 'click', downloadData);
+    toolbar.$configureTools.delegate('a','click', onConfigureTool);
+    toolbar.$nav.delegate('a', 'click', onNavigate);
+    category.$header.on('dblclick keydown', handleInteraction);
+    category.$meals.delegate('.meal', 'dblclick keydown', handleInteraction);
 
     function getData(){
 
@@ -38,25 +63,29 @@ window.onload = function(){
 
     }
 
-    function attach(){
+    function attach(page){
 
-      var categoryData = jsonData.boards[0];
+      var categoryData = jsonData.boards[page];
 
-      console.log(categoryData);
       window.responseData = jsonData;
 
-      $app.empty();
+      var headerHTML = templates.categoryHeader(mergeProps(categoryData, 'category'));
+      category.$header.attr('data-id', categoryData.category.id);
+      category.$header.html(headerHTML);
+      category.$note.html(templates.categoryNote(categoryData));
+      category.$warning.html(templates.categoryWarning(categoryData));
 
-      var $category = $(templates.category(categoryData));
-
-      $category.find('.category-meals').delegate('.meal', 'dblclick keydown', handleInteraction);
 
       _.each(categoryData.category.meals, function(mealData){
 
-        var $meal = $(templates.meal(mergeProps(mealData)));
+        var $meal = $('<li class="meal"></li>');
+        $meal.attr('data-id', mealData.meal.id);
+        var mealHTML = templates.meal(mergeProps(mealData, 'meal'));
+        if(mealData.meal.removed) return;
+        $meal.html(mealHTML);
 
+        /*
           _.each(mealData.meal.options, function(optionData){
-
 
               var $option = $(templates.option(optionData))
 
@@ -66,27 +95,107 @@ window.onload = function(){
 
           });
 
-            $category.find('.category-meals').append($meal);
+          */
+
+            category.$meals.append($meal);
+
 
       });
 
-      $app.append($category);
 
-      $app.delegate('.category', 'dblclick keydown', handleInteraction);
 
     }
 
-    function mergeProps(obj){
+    function downloadData(e){
 
-      var savedProps = JSON.parse(localStorage.getItem(obj.meal.title));
+      var el = $(this),
+          jsonBlob = new Blob([JSON.stringify(exportData(jsonData), null, 2)], {type: 'application/json'}),
+          dataURL = URL.createObjectURL(jsonBlob),
+          currentDate = (new Date()).toLocaleDateString();
 
-      Object.assign(obj.meal, savedProps);
+          currentDate.replace('/', '-');
+
+      el.attr('download', currentDate+"-wichit-boards");
+      el.attr('href', dataURL);
+
+    }
+
+    function onConfigureTool(e){
+
+      var $el = $(this),
+          role = $el.attr('data-role');
+
+      if(role === "add"){
+         addMeal();
+      }
+
+    }
+
+    function onNavigate(e){
+
+      var $el = $(this),
+          direction = $el.attr('data-direction');
+
+      (direction === "next")? currentPage += 1 : currentPage -= 1;
+
+      currentPage %= jsonData.boards.length;
+
+      attach(currentPage);
+
+
+    }
+
+    function addMeal() {
+
+      var data = {
+        title: "Title Here",
+        description: "Description Here",
+        id: (ID + 1)
+      };
+
+      var newMeal = $('<li class="meal is-meal-editing"></li>');
+          newMeal.attr('data-id', data.id);
+          newMeal.html(templates.meal({meal: data}));
+
+          category.$meals.append(newMeal);
+
+      saveToLocalStorage(data);
+
+    }
+
+    function mergeProps(obj, prop){
+
+      var savedProps = JSON.parse(localStorage.getItem(obj[prop].id));
+
+      Object.assign(obj[prop], savedProps);
 
       return obj;
 
     }
 
-    function exportData(){
+    //temp
+    function addId(){
+
+      var data = jsonData;
+
+      _.each(data.boards, function(category){
+
+          category.category.id = (ID += 1);
+
+          _.each(category.category.meals, function(meal){
+
+            meal.meal.id = (ID += 1);
+            meal.meal.from = category.category.name;
+
+          });
+
+      });
+
+      return JSON.stringify(data, null, 2);
+
+    }
+
+    function exportData(jsonData){
 
       _.each(jsonData.boards, function(category){
 
@@ -115,7 +224,8 @@ window.onload = function(){
     function handleInteraction(e){
 
       var $el = $(this),
-          elClass = /(\w+)/i.exec($el.attr('class'))[0],
+          elClasses = $el.attr('class'),
+          elClass = /(?:\w-?)+/i.exec(elClasses)[0],
           editClass = "is-"+elClass+"-editing",
           hasClass = $el.hasClass(editClass),
           keyCode = e.keyCode;
@@ -124,17 +234,25 @@ window.onload = function(){
         $el.addClass(editClass);
       }else if(keyCode === 13 || keyCode === 27 || !keyCode){
         $el.removeClass(editClass);
-        saveData($el, elClass);
+        updateComponent($el, elClass);
       }
 
     }
 
-    //this will save the data for each
-    function saveData(el, elClass){
+    //this will save it to local storage
+    function saveToLocalStorage(json){
+
+      window.localStorage.setItem(json.id, JSON.stringify(json));
+      return true;
+
+    }
+
+    //this will update the DOM for the component
+    function updateComponent(el, elClass){
 
       var archiveObject = {
 
-        meal: function saveMeal(){
+        "meal": function saveMeal(){
 
           //get input values from the user and cache elements
           var title = el.find('.meal-edit-title').val(),
@@ -143,7 +261,8 @@ window.onload = function(){
               $description = el.find('p.meal-description'),
               json = {
                 title: title? title.toLowerCase() : '',
-                description: description? description.toLowerCase() : ''
+                description: description? description.toLowerCase() : '',
+                id: el.attr('data-id')
               };
 
           //mark meal as deleted if removed by user
@@ -153,16 +272,14 @@ window.onload = function(){
             el.remove();
           }else{
             //update DOM elements to reflect new values
-            $title.html(title);
-            $description.html(description);
+            el.html(templates.meal({meal: json}));
           }
 
           //save to local storage.
-          console.log('when item is saved!');
-          window.localStorage.setItem(json.title, JSON.stringify(json));
+          saveToLocalStorage(json);
 
         },
-        category: function saveCategory() {
+        "category-header": function saveCategory() {
 
           var title = el.find('.category-edit-title').val(),
               description = el.find('.category-edit-description').val(),
@@ -173,24 +290,20 @@ window.onload = function(){
               json = {
                 title: title? title.toLowerCase() : '',
                 description: description? description.toLowerCase() : '',
-                subtitle: subtitle? subtitle.toLowerCase() : ''
+                subtitle: subtitle? subtitle.toLowerCase() : '',
+                id: el.attr('data-id')
               };
 
             //if item was deleted remove from DOM
             if(!title && !description && !subtitle){
               json.removed = true;
-              json.name = $title.html();
               el.remove();
             }else{
               // update elements
-              $title? $title.html(title) : '';
-              $description? $description.html(description) : '';
-              $subtitle? $subtitle.html(subtitle): '';
+              el.html(templates.categoryHeader({category: json}));
             }
-
-            //save to local storage.
-            console.log('when item is saved!');
-            window.localStorage.setItem(json.title, JSON.stringify(json));
+            //save to local storage
+            saveToLocalStorage(json);
 
         }
 
@@ -200,16 +313,5 @@ window.onload = function(){
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
 
 };

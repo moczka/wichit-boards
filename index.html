@@ -3,6 +3,7 @@
 <head>
   <title>Wichit Boards</title>
   <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/modules/toolbar/tools.css">
   <link rel="stylesheet" href="styles/modules/category/category.css">
   <link rel="stylesheet" href="styles/modules/meal/meal.css">
   <script src="http://underscorejs.org/underscore-min.js"></script>
@@ -14,67 +15,92 @@
   <script src="/js/main.js"></script>
 </head>
 <body>
-  <div id="app" class="app-container"></div>
-  <script id="categoryTemplate" type="text/template">
-      <div class="category">
-        <header class="category-header">
-          <h2 class="category-title">{{category.title}}</h2>
-          <% if(category.subtitle !== undefined ){ %>
-            <h3 class="category-title category-subtitle">{{category.subtitle}}</h3>
-          <% } %>
-          <% if( category.description !== undefined){ %>
-            <p class="category-description">{{category.description}}</p>
-          <% } %>
-        </header>
-        <div class="edit-box">
-            <input type="text" class="category-title category-edit-title" value="{{ category.title }}">
-            <input type="text" class="category-title category-subtitle category-edit-subtitle" value="{{ category.subtitle }}">
-            <textarea cols="30" rows="row" class="category-description category-edit-description">{{ category.description}}</textarea>
-        </div>
-        <ul class="category-meals">
-          <!-- MEAL LIST GOES HERE -->
-        </ul>
-        <% if(category.note){ %>
-          <div class="category-box category-note">
-            <h3>{{category.note.title}}</h3>
-            <p>{{category.note.description}}</p>
+  <div id="app" class="app-container">
+    <div class="category">
+      <header class="category-header">
+      </header>
+      <ul class="category-meals">
+        <!-- MEAL LIST GOES HERE-->
+      </ul>
+      <div class="category-box category-note"></div>
+      <div class="category-box food-warning"></div>
+    </div>
+  </div>
+  <script id="category-header-template" type="text/template">
+
+          <div class="category-header-view">
+            <h2 class="category-title">{{category.title}}</h2>
+            <% if(category.subtitle !== undefined ){ %>
+              <h3 class="category-title category-subtitle">{{category.subtitle}}</h3>
+            <% } %>
+            <% if( category.description !== undefined){ %>
+              <p class="category-description">{{category.description}}</p>
+            <% } %>
           </div>
-        <% } %>
-        <% if(category.warning){ %>
-          <div class="category-box food-warning">
-            <p>{{category.warning}}</p>
+          <div class="edit-box">
+              <input type="text" class="category-title category-edit-title" value="{{ category.title }}">
+              <input type="text" class="category-title category-subtitle category-edit-subtitle" value="{{ category.subtitle }}">
+              <textarea cols="30" rows="row" class="category-description category-edit-description">{{ category.description}}</textarea>
           </div>
+
+  </script>
+  <script id="category-note-template" type="text/template">
+    <% if(category.note){ %>
+        <h3>{{category.note.title}}</h3>
+        <p>{{category.note.description}}</p>
+    <% } %>
+  </script>
+  <script id="category-warning-template" type="text/template">
+    <% if(category.warning){ %>
+        <p>{{category.warning}}</p>
+    <% } %>
+  </script>
+  <script id="meal-template" type="text/template">
+
+      <div class="meal-content cf">
+        <h3 class="meal-title {{ meal.special? 'meal-is-special' : '' }}">{{ meal.title }}</h3>
+        <% if( meal.description ){ %>
+          <p class="meal-description">{{ meal.description }}</p>
         <% } %>
       </div>
+      <div class="edit-box">
+        <input type="text" class="meal-title meal-edit-title " value="{{ meal.title }}">
+        <textarea rows="auto" class="meal-description meal-edit-description">{{ meal.description }}</textarea>
+      </div>
+      <% if( meal.options ){ %>
+        <ul class="meal-options"></ul>
+      <% } %>
 
   </script>
-  <script id="mealTemplate" type="text/template">
-
-      <li class="meal" draggable="false" data-category="{{ meal.from }}">
-        <div class="meal-content cf">
-          <h3 class="meal-title {{ meal.special? 'meal-is-special' : '' }}">{{ meal.title }}</h3>
-          <% if( meal.description ){ %>
-            <p class="meal-description">{{ meal.description }}</p>
-          <% } %>
-        </div>
-        <div class="edit-box">
-          <input type="text" class="meal-title meal-edit-title " value="{{ meal.title }}">
-          <textarea rows="auto" class="meal-description meal-edit-description">{{ meal.description }}</textarea>
-        </div>
-        <% if( meal.options ){ %>
-          <ul class="meal-options"></ul>
-        <% } %>
-      </li>
-
-  </script>
-  <script id="optionTemplate" type="text/template">
+  <script id="meal-option-template" type="text/template">
     <li>
       <h4 class='meal-option-title'>{{ option.title }}</h4>
       <p class="meal-option-description">{{ option.description }}</p>
     </li>
   </script>
-  <footer>
-    <a href="blob:http://127.0.0.1:8080/a7c278ed-03f2-4db8-9fd7-bd3313f89ffa" download="wichboards.json">DOWNLOAD HERE</a>
-  </footer>
+  <nav class="toolbar">
+
+    <div class="toolbar-nav">
+      <a data-direction="back" class="btn">Back</a>
+      <a data-direction="next" class="btn">Next</a>
+    </div>
+
+    <div class="toolbar-save">
+        <a download="here.json" data-role="save" class="btn">Save</a>
+    </div>
+
+    <div class="toolbar-configure">
+      <div class="configure-font hidden">
+        <a data-role="enlarge" data-increase="true" class="btn">A</a>
+        <a data-role="enlarge" data-increase="false" class="btn">A</a>
+      </div>
+
+      <div class="configure-content">
+        <a data-role="add" class="btn">Add Meal</a>
+      </div>
+
+    </div>
+
+  </nav>
 </body>
 </html>

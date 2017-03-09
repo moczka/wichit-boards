@@ -65,6 +65,16 @@ textarea{
   clear: both;
 }
 
+.btn{
+  font-size: 1.0em;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.1em 2em;
+  border: 1px solid #000;
+  border-radius: .2em;
+}
+
 /* HACKS */
 
 .cf:before,

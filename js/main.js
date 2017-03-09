@@ -1,10 +1,10 @@
 window.onload = function(){
 
-    var ID = 1000;
+    var ID = 2000;
 
     _.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
 
-    var currentPage = 0;
+    var currentPage = 1;
 
     var $app = $('#app'),
         jsonData,
@@ -67,6 +67,9 @@ window.onload = function(){
 
       var categoryData = jsonData.boards[page];
 
+      //clear old meals
+      category.$meals.empty();
+
       window.responseData = jsonData;
 
       var headerHTML = templates.categoryHeader(mergeProps(categoryData, 'category'));
@@ -74,6 +77,7 @@ window.onload = function(){
       category.$header.html(headerHTML);
       category.$note.html(templates.categoryNote(categoryData));
       category.$warning.html(templates.categoryWarning(categoryData));
+
 
 
       _.each(categoryData.category.meals, function(mealData){

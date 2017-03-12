@@ -116,7 +116,7 @@ window.onload = function(){
 
     function synchronizeData(data) {
 
-      var categoryNS = data.category.name+"-category-"+category.id,
+      var categoryNS = data.category.name+"-category-"+data.category.id,
           localValues = JSON.parse(localStorage.getItem(categoryNS)),
           matcher = new RegExp("^"+data.category.name+"-meal-", "i"),
           meals = data.category.meals,
@@ -177,7 +177,7 @@ window.onload = function(){
         synchronizeData(category);
 
       });
-      
+
       var el = $(this),
           jsonBlob = new Blob([JSON.stringify(exportData(jsonData), null, 2)], {type: 'application/json'}),
           dataURL = URL.createObjectURL(jsonBlob),

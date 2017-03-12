@@ -1,6 +1,6 @@
 window.onload = function(){
 
-    var ID = 2000;
+    var ID = new Date().getTime();
 
     _.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
 
@@ -88,6 +88,7 @@ window.onload = function(){
         var $meal = $('<li class="meal"></li>');
         $meal.attr('data-id', mealData.meal.id);
         var mealHTML = templates.meal(mealData);
+        //if meal was removed, do not append
         if(mealData.meal.removed) return;
         $meal.html(mealHTML);
 
@@ -145,7 +146,7 @@ window.onload = function(){
             namespace = data.category.name+"-meal-"+currentMeal.meal.id,
             savedMeal = matchedMealsMap[namespace];
 
-          if(savedMeal){
+          if(savedMeal != undefined){
 
             mergeProps(currentMeal.meal, savedMeal);
             delete matchedMealsMap[namespace];
@@ -170,6 +171,13 @@ window.onload = function(){
 
     function downloadData(e){
 
+      //synchronize all boards with local storage before exporting
+      _.each(jsonData.boards, function(category){
+
+        synchronizeData(category);
+
+      });
+      
       var el = $(this),
           jsonBlob = new Blob([JSON.stringify(exportData(jsonData), null, 2)], {type: 'application/json'}),
           dataURL = URL.createObjectURL(jsonBlob),
@@ -212,6 +220,7 @@ window.onload = function(){
       var data = {
         title: "Title Here",
         description: "Description Here",
+        from: currentCategory,
         id: (ID += 1)
       };
 

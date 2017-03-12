@@ -4,7 +4,8 @@ window.onload = function(){
 
     _.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
 
-    var currentPage = 1;
+    var currentPage = 1,
+        currentCategory = "default title";
 
     var $app = $('#app'),
         jsonData,
@@ -66,25 +67,27 @@ window.onload = function(){
     function attach(page){
 
       var categoryData = jsonData.boards[page];
+          currentCategory = categoryData.category.name;
+
+      //synchronize with local saved data
+      synchronizeData(categoryData);
 
       //clear old meals
       category.$meals.empty();
 
       window.responseData = jsonData;
 
-      var headerHTML = templates.categoryHeader(mergeProps(categoryData, 'category'));
+      var headerHTML = templates.categoryHeader(categoryData);
       category.$header.attr('data-id', categoryData.category.id);
       category.$header.html(headerHTML);
       category.$note.html(templates.categoryNote(categoryData));
       category.$warning.html(templates.categoryWarning(categoryData));
 
-
-
       _.each(categoryData.category.meals, function(mealData){
 
         var $meal = $('<li class="meal"></li>');
         $meal.attr('data-id', mealData.meal.id);
-        var mealHTML = templates.meal(mergeProps(mealData, 'meal'));
+        var mealHTML = templates.meal(mealData);
         if(mealData.meal.removed) return;
         $meal.html(mealHTML);
 
@@ -107,6 +110,61 @@ window.onload = function(){
       });
 
 
+
+    }
+
+    function synchronizeData(data) {
+
+      var categoryNS = data.category.name+"-category-"+category.id,
+          localValues = JSON.parse(localStorage.getItem(categoryNS)),
+          matcher = new RegExp("^"+data.category.name+"-meal-", "i"),
+          meals = data.category.meals,
+          matchedMealsMap = {};
+
+      //update category json values
+      mergeProps(data.category, localValues);
+
+      for(var item in localStorage){
+
+        if(localStorage.hasOwnProperty(item)){
+
+          if(matcher.test(item)){
+
+            var localMeal = JSON.parse(localStorage[item]);
+            matchedMealsMap[item] = localMeal;
+
+          }
+
+        }
+
+      }
+
+      for(var i=0; i<meals.length; i++){
+
+        var currentMeal = meals[i],
+            namespace = data.category.name+"-meal-"+currentMeal.meal.id,
+            savedMeal = matchedMealsMap[namespace];
+
+          if(savedMeal){
+
+            mergeProps(currentMeal.meal, savedMeal);
+            delete matchedMealsMap[namespace];
+
+          }
+      }
+
+      //merge in all new added meals not found in original json
+      for(var meal in matchedMealsMap){
+
+        if(matchedMealsMap.hasOwnProperty(meal)){
+
+          meals.push({meal: matchedMealsMap[meal]});
+
+        }
+
+      }
+
+      return true;
 
     }
 
@@ -154,8 +212,10 @@ window.onload = function(){
       var data = {
         title: "Title Here",
         description: "Description Here",
-        id: (ID + 1)
+        id: (ID += 1)
       };
+
+      var namespace = currentCategory+"-meal-"+data.id;
 
       var newMeal = $('<li class="meal is-meal-editing"></li>');
           newMeal.attr('data-id', data.id);
@@ -163,17 +223,13 @@ window.onload = function(){
 
           category.$meals.append(newMeal);
 
-      saveToLocalStorage(data);
+      saveToLocalStorage(namespace, data);
 
     }
 
-    function mergeProps(obj, prop){
+    function mergeProps(host, giver){
 
-      var savedProps = JSON.parse(localStorage.getItem(obj[prop].id));
-
-      Object.assign(obj[prop], savedProps);
-
-      return obj;
+      return Object.assign(host, giver);
 
     }
 
@@ -244,9 +300,9 @@ window.onload = function(){
     }
 
     //this will save it to local storage
-    function saveToLocalStorage(json){
+    function saveToLocalStorage(namespace, json){
 
-      window.localStorage.setItem(json.id, JSON.stringify(json));
+      window.localStorage.setItem(namespace, JSON.stringify(json));
       return true;
 
     }
@@ -266,8 +322,9 @@ window.onload = function(){
               json = {
                 title: title? title.toLowerCase() : '',
                 description: description? description.toLowerCase() : '',
-                id: el.attr('data-id')
-              };
+                id: Number(el.attr('data-id'))
+              },
+              namespace = namespace = currentCategory+"-meal-"+json.id;
 
           //mark meal as deleted if removed by user
           if(!title && !description){
@@ -280,7 +337,7 @@ window.onload = function(){
           }
 
           //save to local storage.
-          saveToLocalStorage(json);
+          saveToLocalStorage(namespace, json);
 
         },
         "category-header": function saveCategory() {
@@ -295,8 +352,9 @@ window.onload = function(){
                 title: title? title.toLowerCase() : '',
                 description: description? description.toLowerCase() : '',
                 subtitle: subtitle? subtitle.toLowerCase() : '',
-                id: el.attr('data-id')
-              };
+                id: Number(el.attr('data-id'))
+              },
+              namespace = currentCategory+"-category-"+json.id;
 
             //if item was deleted remove from DOM
             if(!title && !description && !subtitle){
@@ -307,7 +365,7 @@ window.onload = function(){
               el.html(templates.categoryHeader({category: json}));
             }
             //save to local storage
-            saveToLocalStorage(json);
+            saveToLocalStorage(namespace, json);
 
         }
 

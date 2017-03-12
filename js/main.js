@@ -179,14 +179,16 @@ window.onload = function(){
       });
 
       var el = $(this),
-          jsonBlob = new Blob([JSON.stringify(exportData(jsonData), null, 2)], {type: 'application/json'}),
-          dataURL = URL.createObjectURL(jsonBlob),
-          currentDate = (new Date()).toLocaleDateString();
+          jsonBlob = new Blob([JSON.stringify(jsonData, null, 2)], {type: "application/json"}),
+          currentDate = (new Date()).toLocaleDateString(),
+          jsonDataURL = URL.createObjectURL(jsonBlob);
 
           currentDate.replace('/', '-');
 
-      el.attr('download', currentDate+"-wichit-boards");
-      el.attr('href', dataURL);
+
+      el.attr('download', 'wichit-boards'+currentDate+'.json');
+
+      el.attr('href', jsonDataURL);
 
     }
 
@@ -207,6 +209,8 @@ window.onload = function(){
           direction = $el.attr('data-direction');
 
       (direction === "next")? currentPage += 1 : currentPage -= 1;
+
+      currentPage = (currentPage < 0)? jsonData.boards.length -1 : currentPage;
 
       currentPage %= jsonData.boards.length;
 

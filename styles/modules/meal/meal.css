@@ -13,16 +13,12 @@
   font-weight: 300;
   color: #d62222;
   float: left;
-  line-height: 0.90;
+  line-height: 0.60;
   text-transform: inherit;
 }
 .meal-title:after{
   content: ": ";
-  padding-left: 3px;
-}
-
-.meal-price{
-  white-space: nowrap;
+  padding-right: 3px;
 }
 .meal-price:before{
   display: inline-block;
@@ -98,6 +94,11 @@
   margin-right: 0.15em;
   height: 1.15em;
   width: 1.15em;
-  top: -0.20em;
+  top: -0.30em;
   left: 0;
+}
+.meal-is-separator{
+  font-size: 1.5em;
+  font-family: Impact, sans-serif;
+  color: #fff;
 }

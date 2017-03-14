@@ -22,7 +22,6 @@
       <ul class="category-meals">
         <!-- MEAL LIST GOES HERE-->
       </ul>
-      <div class="category-box category-note"></div>
       <div class="category-box food-warning"></div>
     </div>
   </div>
@@ -58,14 +57,14 @@
   <script id="meal-template" type="text/template">
 
       <div class="meal-content cf">
-        <h3 class="meal-title {{ meal.special? 'meal-is-special' : '' }}">{{ meal.title }}</h3>
+        <h3 class="meal-title {{ meal.special? 'meal-is-special' : '' }} {{ meal.separator? 'meal-is-separator' : ''}}">{{ meal.title }}</h3>
         <% if( meal.description ){ %>
           <p class="meal-description">{{ meal.description }}</p>
         <% } %>
       </div>
       <div class="edit-box">
-        <input type="text" class="meal-title meal-edit-title " value="{{ meal.title }}">
-        <textarea rows="auto" class="meal-description meal-edit-description">{{ meal.description }}</textarea>
+        <input type="text" class="meal-title meal-edit-title" value="{{ meal.title }}">
+        <textarea rows="4" class="meal-description meal-edit-description">{{ meal.description }}</textarea>
       </div>
       <% if( meal.options ){ %>
         <ul class="meal-options"></ul>

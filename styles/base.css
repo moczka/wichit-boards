@@ -40,7 +40,9 @@ textarea{
 /* Application Module */
 
 .app-container{
+  height: 2475px;
   background-color: #000;
+  overflow: hidden;
 }
 
 /* Base wide States */
@@ -91,4 +93,15 @@ textarea{
  */
 .cf {
     *zoom: 1;
+}
+
+/* PRINT QUERY */
+@media print {
+  body{
+    width: 1100px;
+    font-size: 31px;
+  }
+  .toolbar{
+    display: none !important;
+  }
 }

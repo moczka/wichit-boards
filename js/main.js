@@ -184,10 +184,7 @@ window.onload = function(){
           jsonDataURL = URL.createObjectURL(jsonBlob);
 
           currentDate.replace('/', '-');
-
-
-      el.attr('download', 'wichit-boards'+currentDate+'.json');
-
+          
       el.attr('href', jsonDataURL);
 
     }
@@ -215,7 +212,6 @@ window.onload = function(){
       currentPage %= jsonData.boards.length;
 
       attach(currentPage);
-
 
     }
 

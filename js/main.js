@@ -92,19 +92,6 @@ window.onload = function(){
         if(mealData.meal.removed) return;
         $meal.html(mealHTML);
 
-        /*
-          _.each(mealData.meal.options, function(optionData){
-
-              var $option = $(templates.option(optionData))
-
-              console.log($option);
-
-              $meal.find('.meal-options').append($option);
-
-          });
-
-          */
-
             category.$meals.append($meal);
 
 
@@ -184,7 +171,7 @@ window.onload = function(){
           jsonDataURL = URL.createObjectURL(jsonBlob);
 
           currentDate.replace('/', '-');
-          
+
       el.attr('href', jsonDataURL);
 
     }

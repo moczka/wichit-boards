@@ -20,6 +20,7 @@
   font-size: 1.5em;
 }
 .category-description{
+  border-bottom: 3px solid #ffffcc;
   color: #ffffcc;
   letter-spacing: -1px;
   padding-bottom: 10px;

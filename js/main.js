@@ -71,6 +71,7 @@ window.onload = function(){
 
       //synchronize with local saved data
       synchronizeData(categoryData);
+      categoryData.category.meals = orderItems(categoryData.category.meals);
 
       //clear old meals
       category.$meals.empty();
@@ -87,6 +88,7 @@ window.onload = function(){
 
         var $meal = $('<li class="meal"></li>');
         $meal.attr('data-id', mealData.meal.id);
+        if(mealData.meal.separator) $meal.addClass('is-separator');
         var mealHTML = templates.meal(mealData);
         //if meal was removed, do not append
         if(mealData.meal.removed) return;
@@ -200,6 +202,41 @@ window.onload = function(){
 
       attach(currentPage);
 
+    }
+
+    function orderItems(arr){
+
+      arr.sort(function(mealA, mealB){
+
+        return mealA.meal.order - mealB.meal.order;
+
+      });
+
+      arr.forEach(function(meal, index){
+
+        meal.meal.order = index+1;
+
+      });
+
+      return arr;
+
+    }
+
+    function addOrder(json){
+
+        _.each(json.boards, function(board, page){
+
+          var category = board.category;
+
+          category.page = page+1;
+
+          _.each(category.meals, function(meal, order){
+
+              meal.meal.order = order+1;
+
+          });
+
+        });
     }
 
     function addMeal() {

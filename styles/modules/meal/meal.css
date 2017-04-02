@@ -1,5 +1,5 @@
 .meal{
-  border-top: 3px solid #ffffcc;
+  border-bottom: 3px solid #ffffcc;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   letter-spacing: -1px;
   padding: 0.6em 0;
@@ -73,6 +73,10 @@
 
 
 /* MODULES STATES */
+.meal.is-separator{
+  border-bottom: none;
+}
+
 .meal.is-meal-editing > .meal-content{
   display: none;
 }

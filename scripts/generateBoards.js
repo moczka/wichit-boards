@@ -27,11 +27,11 @@ const constructor = {
       height: 7425
   }),
   part1: Object.assign(Object.create(partProto), {
-      width: 7425,
+      width: 3300,
       height: 5100
   }),
   part2: Object.assign(Object.create(partProto), {
-      width: 7425,
+      width: 3300,
       height: 2325
   })
 };
@@ -43,7 +43,7 @@ function init(){
   
   const directoryRead = (new Promise((res, rej) => {
 
-    fs.readdir(DIR.PDF_DIR, (err, files) => {
+    fs.readdir("scripts/", (err, files) => {
 
       if(err !== null){
 
@@ -51,7 +51,7 @@ function init(){
 
       }else{
 
-        files = files.map( file => ("pdf/"+file));
+        files = files.filter( file => !(file[0] === "." || file === "generateBoards.js") ).map( file => __dirname+"/"+file);
         res(files);
 
       }
@@ -63,7 +63,7 @@ function init(){
     const convertPromises = files.map((filePath, index) => {
 
         const outputPath = filePath.replace(/.pdf/, ".png");
-        const partName = filePath.slice(10, 15); 
+        const partName = filePath.slice(-9, -4); 
 
         return convertTo({path: filePath, ops: {density: 300}}, {path: outputPath, ops: {extent: constructor[partName].getGeometry()}});
 
@@ -81,9 +81,9 @@ function init(){
 
           const part1Path = convertedFile;
           const part2Path = convertedFile.replace("part1", "part2");
-          const finalImage = convertedFile.slice(0, 5);
+          const finalImage =  __dirname+"/"+convertedFile.slice(-15, -10) + ".png";
 
-          var containerInfo = {path: part1Path, ops: {extent: constructor["part1"].getGeometry()}};
+          var containerInfo = {path: part1Path, ops: {extent: constructor["container"].getGeometry()}};
           var childInfo = {path: part2Path};
           var outputInfo = {path: finalImage, ops: {geometry: ("+0+"+constructor["part1"].height), composite: ""}};
 
@@ -97,7 +97,7 @@ function init(){
     
     });
 
-    return mergePromises;
+    return Promise.all(mergePromises);
 
 }).then(() => {
 
@@ -108,47 +108,6 @@ function init(){
     console.log(failure.message, failure.error);
 
 });
-
-
-/*
-  // create images
-  for(var j=1; j<=numItems; j++){
-
-    (function(i){
-
-      var convertPromises = [];
-
-      var sourcePart1 = dir+'page'+i+'-'+'part1.pdf';
-      var sourcePart2 = dir+'page'+i+'-'+'part2.pdf';
-      var boardImage = dir+'board'+i+".png";
-
-      var outputPart1 = dir+sourcePart1.replace("pdf", "png");
-      var outputPart2 = dir+sourcePart2.replace("pdf", "png");
-
-      convertPromises.push(convertTo({path: sourcePart1, ops: {density: 300}}, {path: outputPart1, ops: {extent: part1.getGeometry()}}));
-      convertPromises.push(convertTo({path: sourcePart2, ops: {density: 300}}, {path: outputPart2, ops: {extent: part2.getGeometry()}}));
-
-      var mergePromise = Promise.all(convertPromises).then(function(values){
-
-        console.log('Merger is running!!');
-        console.log('values provided by promises: ', values);
-
-        var containerInfo = {path: outputPart1, ops: {extent: container.getGeometry()}};
-        var childInfo = {path: outputPart2};
-        var outputInfo = {path: boardImage, ops: {geometry: ("+0+"+part1.height), composite: ""}};
-
-        mergeImages(containerInfo, childInfo, outputInfo).then(() =>{
-
-          removeFile(containerInfo.path, childInfo.path);
-          console.log("DONE merging images.") });
-
-        });
-
-    })(j);
-
-  }
-
-  */
 
 }
 
@@ -193,7 +152,7 @@ function convertTo(source, output){
 
         }else{
 
-          console.log('it succeeeded');
+          console.log('Conversion succeeded.');
           res(output.path);
 
         }
@@ -226,11 +185,3 @@ function removeFile(){
   }
 
 }
-
-/*
-'convert -extent 792x1782 page1-part1.png page1-part2.png -geometry +0+1224 -composite total.png'
-
- convert -density 300 page1-part2.pdf -extract 3300x2324 page1-part2.png
-
-convert -extent 3300x7424 page1-part1.png page1-part2.png -geometry +0+1224 -composite total.png
-*/

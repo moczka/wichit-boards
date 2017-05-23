@@ -1,6 +1,7 @@
 
-var gm = require('gm').subClass({imageMagick: true});
-var exec = require('child_process').exec;
+const gm = require('gm').subClass({imageMagick: true});
+const exec = require('child_process').exec;
+const fs = require('fs');
 
 /*
   NOTE: Density can change, but this will cause the layout dimensions to change as well.
@@ -8,40 +9,108 @@ var exec = require('child_process').exec;
 
 var density = 300;
 var dir = '';
+const DIR = {
+  PDF_DIR: "pdfs/",
+  PNG_DIR: "pngs/"
+};
+
 var numItems = 7;
 var partProto = {
   getGeometry: function(){
     return this.width+"x"+this.height;
   }
 };
-var container = Object.assign(Object.create(partProto), {
-  width: 3300,
-  height: 7425
-});
-var part1 = Object.assign(Object.create(partProto), {
-  width: container.width,
-  height: 5100
-});
-var part2 = Object.assign(Object.create(partProto), {
-  width: container.width,
-  height: 2325
-});
+
+const constructor = {
+  container : Object.assign(Object.create(partProto), {
+      width: 3300,
+      height: 7425
+  }),
+  part1: Object.assign(Object.create(partProto), {
+      width: 7425,
+      height: 5100
+  }),
+  part2: Object.assign(Object.create(partProto), {
+      width: 7425,
+      height: 2325
+  })
+};
+
 
 init();
 
-/*
-var container = {path: 'page1-part1.png', ops: {extent: container.getGeometry()}};
-var child = {path: 'page1-part2.png'};
-var outputImage = {path: 'page1.png', ops: {geometry: ("+0+"+part1.height), composite: ""}};
-
-mergeImages(container, child, outputImage).then(() =>{ console.log("DONE") });
-*/
-
-
 function init(){
+  
+  const directoryRead = (new Promise((res, rej) => {
+
+    fs.readdir(DIR.PDF_DIR, (err, files) => {
+
+      if(err !== null){
+
+        rej({message: "Error reading directory: ", error: err});
+
+      }else{
+
+        files = files.map( file => ("pdf/"+file));
+        res(files);
+
+      }
+
+  });
+
+})).then((files) => {
+
+    const convertPromises = files.map((filePath, index) => {
+
+        const outputPath = filePath.replace(/.pdf/, ".png");
+        const partName = filePath.slice(10, 15); 
+
+        return convertTo({path: filePath, ops: {density: 300}}, {path: outputPath, ops: {extent: constructor[partName].getGeometry()}});
+
+    });
+
+    return Promise.all(convertPromises);
+
+}).then((convertedFiles) => {
+
+    const mergePromises = [];
+
+        convertedFiles.forEach((convertedFile) => {
+
+          if(!(/part1/.test(convertedFile))) return;
+
+          const part1Path = convertedFile;
+          const part2Path = convertedFile.replace("part1", "part2");
+          const finalImage = convertedFile.slice(0, 5);
+
+          var containerInfo = {path: part1Path, ops: {extent: constructor["part1"].getGeometry()}};
+          var childInfo = {path: part2Path};
+          var outputInfo = {path: finalImage, ops: {geometry: ("+0+"+constructor["part1"].height), composite: ""}};
+
+          const mergePromise = mergeImages(containerInfo, childInfo, outputInfo).then(() =>{
+
+              removeFile(containerInfo.path, childInfo.path);
+            
+          });
+
+        mergePromises.push(mergePromise);
+    
+    });
+
+    return mergePromises;
+
+}).then(() => {
+
+   console.log("Done merging all images!");
+
+}).catch((failure) => {
+
+    console.log(failure.message, failure.error);
+
+});
 
 
-
+/*
   // create images
   for(var j=1; j<=numItems; j++){
 
@@ -64,8 +133,6 @@ function init(){
         console.log('Merger is running!!');
         console.log('values provided by promises: ', values);
 
-
-
         var containerInfo = {path: outputPart1, ops: {extent: container.getGeometry()}};
         var childInfo = {path: outputPart2};
         var outputInfo = {path: boardImage, ops: {geometry: ("+0+"+part1.height), composite: ""}};
@@ -75,21 +142,17 @@ function init(){
           removeFile(containerInfo.path, childInfo.path);
           console.log("DONE merging images.") });
 
-
-
-      });
-
-
+        });
 
     })(j);
 
   }
 
+  */
+
 }
 
 function mergeImages(container, child, output){
-
-  console.log('merge images being called! ');
 
   return convertTo(container, child, output);
 
@@ -121,11 +184,9 @@ function convertTo(source, output){
 
     var convertPromise = new Promise(function(res, rej){
 
-      console.log(command);
-
       exec(command, function(err, stdout, stderr){
 
-        if(err != null){
+        if(err !== null){
 
           console.log('failed! ', err)
           rej("Convertion failed!");
@@ -156,7 +217,7 @@ function removeFile(){
 
       exec('rm '+filePath, function(err, stdout, stderr){
         if(err != null){
-          console.log("There was an error removing file "+ err);
+          console.log("There was an error removing file ", err);
           return false;
         }else{
           return true;

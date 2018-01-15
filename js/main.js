@@ -85,7 +85,8 @@ window.onload = function(){
 
       _.each(categoryData.category.meals, function(mealData){
 
-        var $meal = $('<li class="meal"></li>');
+        var mealAddClass = mealData.meal.noBorder ? 'noBorder' : '';
+        var $meal = $(`<li class="meal ${mealAddClass}"></li>`);
         $meal.attr('data-id', mealData.meal.id);
         var mealHTML = templates.meal(mealData);
         //if meal was removed, do not append

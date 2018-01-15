@@ -5,14 +5,16 @@
   padding: 0.6em 0;
   color: #ffffcc;
 }
+.meal.noBorder {
+  border-top: none;
+}
 
 .meal-title{
-  display: inline-block;
+  float: left;
   font-size: 1.5em;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-weight: 300;
   color: #d62222;
-  float: left;
   line-height: 0.60;
   text-transform: inherit;
 }

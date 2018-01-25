@@ -48,6 +48,12 @@
   float: left;
   padding-right: 0.3em;
 }
+.meal-option-title.warning{
+  color: #d62222;
+  line-height: initial;
+}
+
+
 .meal-option-title:after{
   content: ": ";
   padding-left: 3px;

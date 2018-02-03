@@ -4,7 +4,7 @@ window.onload = function(){
 
     _.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
 
-    var currentPage = 1,
+    var currentPage = getActivePage(),
         currentCategory = "default title";
 
     var $app = $('#app'),
@@ -204,7 +204,8 @@ window.onload = function(){
     function onNavigate(e){
 
       var $el = $(this),
-          direction = $el.attr('data-direction');
+          direction = $el.attr('data-direction'),
+          currentPage = getActivePage();
 
       (direction === "next")? currentPage += 1 : currentPage -= 1;
 
@@ -212,8 +213,14 @@ window.onload = function(){
 
       currentPage %= jsonData.boards.length;
 
+      saveToLocalStorage('activePage', currentPage);
+
       attach(currentPage);
 
+    }
+
+    function getActivePage() {
+      return parseInt(localStorage.getItem('activePage')) || 1;
     }
 
     function addMeal() {

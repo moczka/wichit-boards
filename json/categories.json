@@ -5,14 +5,14 @@
         "title": "breakfast sandwiches",
         "subtitle": "served all day",
         "name": "breakfast-sandwiches",
-        "description": "all breakfast sandwiches are made with two fram fresh eggs substitute egg whites\n2.00, extra egg $1.9, vocado $2.0, xtra meat $2.0, luten free bread $2",
+        "description": "all breakfast sandwiches are made with two farm fresh eggs substitute egg whites\n2, extra egg $1.99, avocado $2, xtra meat $2, luten free bread $2",
         "warning": "ASTERISK (*) FOOD ITEMS  SUCH AS HAMBURGER, STEAK OR EGGS COOKED TO ORDER, RAW FISH, SHELLFISH AND RAW EGG CAESAR SALAD MAY BE SERVED RAW OR UNDERCOOKED. CONSUMING UNDERCOOKED MEATS, POULTRY OR RAW FOODS MAY INCREASE THE RISK OF FOOD BORNE ILLNES, BEFORE PLACING YOUR ORDER, PLEASE NOTIFY US OF ANY FOOD RELATED ALLERGIES YOU MAY HAVE..",
         "page": 1,
         "meals": [
           {
             "meal": {
               "title": "*cobblestone",
-              "description": "seared tomato, arugula, gouda cheese, two farm fresh egg on multi-grain $6.25",
+              "description": "seared tomato, arugula, gouda cheese, two farm fresh egg on multi-grain $6.29",
               "from": "breakfast-sandwiches",
               "order": 1,
               "id": 1002
@@ -21,7 +21,7 @@
           {
             "meal": {
               "title": "*green eggs",
-              "description": "smoked ham, basil walnut pesto, vermont cheddar, fried two farm fresh egg on house rustic toast $6.25",
+              "description": "smoked ham, basil walnut pesto, vermont cheddar, fried two farm fresh egg on house rustic toast $6.29",
               "from": "breakfast-sandwiches",
               "order": 1,
               "id": 1003
@@ -59,7 +59,7 @@
           {
             "meal": {
               "title": "*bread winner",
-              "description": "choice of apple  wood smoked  bacon, ham or sausage, with two farm fresh egg and melted cheese $6.25",
+              "description": "choice of apple  wood smoked  bacon, ham or sausage, with two farm fresh egg and melted cheese $6.29",
               "from": "breakfast-sandwiches",
               "order": 1,
               "id": 1007
@@ -67,9 +67,9 @@
           },
           {
             "meal": {
-              "title": "* the piggy",
+              "title": "*the piggy",
               "from": "breakfast-sandwiches",
-              "description": "smoked pulled pork, two fried eggs, bbq sauce, gouda cheese, cheese, coleslaw on brioche roll  $8.99",
+              "description": "smoked pulled pork, two fried eggs, bbq sauce, melted gouda cheese, coleslaw on brioche roll  $8.99",
               "id": 1489358853583
             }
           },
@@ -93,13 +93,15 @@
             "meal": {
               "id": 4348250,
               "from": "breakfast-sandwiches",
-              "title": "*the carnegie",
-              "description": "eggs scrambled with pastrimi toped with melted pepper jack cheese, on brioche bread $ 8.99"
+              "title": "",
+              "description": "",
+              "name": "",
+              "removed": true
             }
           },
           {
             "meal": {
-              "title": "*monte cristo ",
+              "title": "*monte cristo",
               "description": "french toasted style, virginia ham, two eggs any style, melted swiis cheese, coleslaw  $ 8.99",
               "id": 1515348622280
             }
@@ -141,17 +143,17 @@
           },
           {
             "meal": {
-              "title": "breads options ",
-              "description": "house rustic, multigrain, whole wheat, marble rye, ciabatta, bagel, brioche bun, bageuette, wheat wrap, (gluten free bread $2)",
-              "id": 1515975669809
-            }
-          },
-          {
-            "meal": {
               "title": "*the santos special",
               "special": true,
               "description": "two over media eggs, melted gouda cheese, avocado, apple wood smoked bacon, grilled spinach on whole wheat wrap $ 8.99",
               "id": 1516232640046
+            }
+          },
+          {
+            "meal": {
+              "title": "breads options",
+              "description": "house rustic, multigrain, whole wheat, marble rye, ciabatta, bagel ($0.59), brioche bun, baguette, wheat wrap, (gluten free bread $2)",
+              "id": 1515975669809
             }
           }
         ],
@@ -169,6 +171,14 @@
         "meals": [
           {
             "meal": {
+              "title": "old orchard beach",
+              "special": true,
+              "description": "house roasted turkey, cranberry sauce, apple wood smoked bacon, fired grilled pears, brie cheese, lettuce and tomatoes on ciabatta bread $10.99",
+              "id": 1515975669812
+            }
+          },
+          {
+            "meal": {
               "title": "the newbury",
               "description": "grilled chicken, applewood smoked bacon, baby kale, poblano ranch dressing, guacamole, pepper jack cheese on a bagette $10.28",
               "special": true,
@@ -180,7 +190,7 @@
           {
             "meal": {
               "title": "antipasto",
-              "description": "grilled asparagus, prosciutto, fresh mozzarella, extra virgin olive oil, balsamic glaze, sliced pepperoncinni, ciabatta $10.28",
+              "description": "grilled asparagus, prosciutto, fresh mozzarella, extra virgin olive oil, balsamic glaze, sliced pepperoncinni on a ciabatta $10.28",
               "from": "lunch-menu",
               "order": 1,
               "id": 1010
@@ -198,7 +208,7 @@
           {
             "meal": {
               "title": "so. cal",
-              "description": "house roasted turkey, apple wood smoked bacon, avocado, mojo mustard, brioche bun $10.28",
+              "description": "house roasted turkey, apple wood smoked bacon, avocado, mojo mustard spread on a brioche bun $10.28",
               "from": "lunch-menu",
               "order": 1,
               "id": 1012
@@ -225,7 +235,7 @@
           {
             "meal": {
               "title": "-v-caprese",
-              "description": "fresh mozzarella, ripe tomato, extra virgin olive oil fresh basil, balsamic glaze, ciabatta $10.28",
+              "description": "fresh mozzarella, ripe tomato, extra virgin olive oil fresh basil, balsamic glaze on a ciabatta $10.28",
               "from": "lunch-menu",
               "order": 1,
               "id": 1015
@@ -260,7 +270,7 @@
           {
             "meal": {
               "title": "the boylston",
-              "description": "farm raised roasted pulled chicken, apple wood smoked baco, arlic aioli, lettuce and tomatoes, cheddar cheese, hummus on ciabatta bread $10.99 ",
+              "description": "farm raised roasted pulled chicken, apple wood smoked bacon, garlic aioli, lettuce and tomatoes, cheddar cheese, hummus on ciabatta bread $10.99 ",
               "id": 1515200146594
             }
           },
@@ -273,7 +283,8 @@
           },
           {
             "meal": {
-              "title": "the  new yorker club",
+              "title": "the new yorker club",
+              "special": true,
               "description": "house roasted turkey, virginia ham, apple wood smoked bacon, mayo, apple sliced, lettuce and tomato on house rustic bread $11.99",
               "id": 1515200146596
             }
@@ -285,14 +296,6 @@
               "id": 1515971293479,
               "name": "note",
               "removed": true
-            }
-          },
-          {
-            "meal": {
-              "title": "old  orchard beach",
-              "special": true,
-              "description": "house roasted turkey, cranberry sauce, apple wood smoked bacon, fired grilled pears, brie cheese, lettuce and tomatoes on ciabatta bread $10.99",
-              "id": 1515975669812
             }
           }
         ],
@@ -315,6 +318,14 @@
               "from": "hot-sandwiches",
               "order": 1,
               "id": 1018
+            }
+          },
+          {
+            "meal": {
+              "title": "the studio",
+              "special": true,
+              "description": "grilled chicken tenders, sliced prosciutto, garlic aiole, melted cheddar cheese apple wood smoked bacon on house rustic bread $10.99",
+              "id": 1516232640047
             }
           },
           {
@@ -438,14 +449,6 @@
               "name": "Title Here",
               "removed": true
             }
-          },
-          {
-            "meal": {
-              "title": "the studio",
-              "special": true,
-              "description": "grilled chicken, prosciutto, garlic aiole, melted cheddar cheese apple wood smoked bacon on house rustic bread  $ 10.99",
-              "id": 1516232640047
-            }
           }
         ],
         "id": 1017,
@@ -455,15 +458,23 @@
     {
       "category": {
         "title": "fresh salads",
-        "description": " add to any salad: tuna salad $4, roasted pulled chicken $4, grilled chicken $4, smoked salmon $5, steak tips $5, shrimp $5",
+        "description": " add to any salad: tuna salad $4, roasted pulled chicken $4, grilled chicken $4, smoked salmon $6, certified angus steak tips $6, shrimp $6",
         "name": "fresh-salands",
         "warning": "ASTERISK (*) FOOD ITEMS  SUCH AS HAMBURGER, STEAK OR EGGS COOKED TO ORDER, RAW FISH, SHELLFISH AND RAW EGG CAESAR SALAD MAY BE SERVED RAW OR UNDERCOOKED. CONSUMING UNDERCOOKED MEATS, POULTRY OR RAW FOODS MAY INCREASE THE RISK OF FOOD BORNE ILLNES, BEFORE PLACING YOUR ORDER, PLEASE NOTIFY US OF ANY FOOD RELATED ALLERGIES YOU MAY HAVE..",
         "page": 4,
         "meals": [
           {
             "meal": {
+              "title": "the blue moon beet bowl",
+              "special": true,
+              "description": "roasted golden beets, chopped  romaine lettuce, roasted walnuts, cranberry sauce, blue cheese crumbs, avocado, cherry tomatoes, tossed on cranberry vinaigrette \n $9.99",
+              "id": 1515348622279
+            }
+          },
+          {
+            "meal": {
               "title": "the border bowl",
-              "description": "fresh baby kale, roasted corn, avocad, ed onion, lack beans, garden peppers, poblano ranch dressin, rispy tortilla strips and pepper jack cheese  $9.99",
+              "description": "organic kale, roasted corn, avocado, red onion, black beans, garden peppers, poblano ranch dressin, crispy tortilla strips and pepper jack cheese  $9.99",
               "special": true,
               "from": "fresh-salands",
               "order": 1,
@@ -473,7 +484,7 @@
           {
             "meal": {
               "title": "wichit greens bowl",
-              "description": "organic green, arrot laces, cucumber, tomato, avocado, onion, grilled asparagus, oregano flaks and balsamic vinagrette $9.99",
+              "description": "organic green, carrot laces, cucumber, tomato, avocado, onion, grilled asparagus, oregano flakes and balsamic vinagrette $9.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1031
@@ -482,7 +493,7 @@
           {
             "meal": {
               "title": "mediterranean bowl",
-              "description": "organic baby kale, tomato, cucumber, kalamata olive, roasted red pepper, oregano flaks, crumbled feta, grrek dressing $9.99",
+              "description": "organic baby kale, cherry tomato, cucumber, kalamata olive, roasted red pepper, oregano flakes, crumbled feta, greek dressing $9.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1032
@@ -491,7 +502,7 @@
           {
             "meal": {
               "title": "harvest bowl",
-              "description": "organic greens, sun-dried cranberries, roasted pear, goat chees, oasted walnuts and cranberry vinaigrette $ 9.99",
+              "description": "organic greens, sun-dried cranberries, roasted pear, goat chees, roasted walnuts and cranberry vinaigrette $ 9.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1033
@@ -500,7 +511,7 @@
           {
             "meal": {
               "title": "kale caesar bowl",
-              "description": "shredded kal, hopped romaine, tomatoes, crouton, armesan cheese, a hint of lime juice and caesar dressing $9.99",
+              "description": "organic  kale, chopped romaine, cherry tomatoes, crouton, armesan cheese, a hint of lime juice and caesar dressing $9.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1034
@@ -509,7 +520,7 @@
           {
             "meal": {
               "title": "the caprese",
-              "description": "vine ripe tomat, ichit greens, extra virgin olive oil, fresh mozzarella, basil, balsamic glaze $9.99",
+              "description": "vine ripe tomatoes, mix greens, extra virgin olive oil, fresh mozzarella, basil, balsamic glaze $9.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1035
@@ -518,7 +529,7 @@
           {
             "meal": {
               "title": " avocado quinoa bowl",
-              "description": "red quinoa, avocado, kale, carrot, chick pea, red onion, cherry tomatoes, julienne  peppers, balsamic vinagette $9.99",
+              "description": "red quinoa, avocado, organic kale, carrot laces, chick pea, red onion, cherry tomatoes, julienne garden peppers, balsamic vinaigrette $9.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1036
@@ -537,23 +548,15 @@
           {
             "meal": {
               "title": "the funky noodle  bowl",
-              "description": "udon noodle, shredded cabbage, tomatoes, edamame, cilantro, laces carros, scalions tossed on sweet thai chili sauce topped with  sesame seeds $ 9.99",
+              "description": "udon noodle, shredded cabbage, tomatoes, edamame, cilantro, laces carrots, scalions tossed on sweet thai chili sauce topped with  sesame seeds $ 9.99",
               "id": 1515348622277
             }
           },
           {
             "meal": {
               "title": "the cobb bowl",
-              "description": " chopped romaine lettuce, bacon bits, blue cheese crumbs, tomatoes, garden peppers, cucumbers, hard boiled egg, with balsamic dressing $ 9.99",
+              "description": " chopped romaine lettuce, bacon bits, blue cheese crumbs, cherry tomatoes, garden peppers, cucumbers, hard boiled egg, with balsamic dressing $ 9.99",
               "id": 1515348622278
-            }
-          },
-          {
-            "meal": {
-              "title": "the blue moon beet bowl",
-              "special": true,
-              "description": "roasted golden beets, crispy romaine lettuce, roasted walnuts, cranberry sauce, blue cheese crumbs, avocado, cherry tomatoes, tossed on cranberry vinaigrette \n $9.99",
-              "id": 1515348622279
             }
           }
         ],
@@ -567,6 +570,24 @@
         "name": "beverages",
         "page": 5,
         "meals": [
+          {
+            "meal": {
+              "title": "signature frozen drinks",
+              "special": true,
+              "description": "($6.29) frozen passion fruit, frozen mango, frozen pomegranate, frozen orange, frozen strawberry, frozen peach, frozen blueberry, frozen caramel expresso",
+              "id": 1516849530137
+            }
+          },
+          {
+            "meal": {
+              "title": "wichit milk shakes",
+              "description": "  made with whole milk and ice cream :                                                                                    \n                                                                                                                                   \nbanana ,peanut butter , strawberry, blueberry, chocolate, nutella, avocado, mango, pineapple, and peanut butter $ 6.49 add another item for $1.00",
+              "special": true,
+              "from": "beverages",
+              "order": 1,
+              "id": 1057
+            }
+          },
           {
             "meal": {
               "title": "passion fruit lemonade",
@@ -586,8 +607,8 @@
           },
           {
             "meal": {
-              "title": "limemade",
-              "description": "Refreshing limemade $3.99",
+              "title": "peach lemonade ",
+              "description": " $5.99",
               "id": 1040
             }
           },
@@ -597,13 +618,6 @@
               "special": true,
               "description": "$5.99",
               "id": 1045
-            }
-          },
-          {
-            "meal": {
-              "title": "frozen strambery lemonade",
-              "description": "$5.99",
-              "id": 1044
             }
           },
           {
@@ -636,13 +650,6 @@
           },
           {
             "meal": {
-              "title": "fresh brewed coffee",
-              "description": "$2.30",
-              "id": 1489434825079
-            }
-          },
-          {
-            "meal": {
               "title": "greenie smooth",
               "special": true,
               "description": "kale, avocado, yogurt, lemonade $6.49",
@@ -656,24 +663,28 @@
               "special": true,
               "order": 1,
               "id": 1043,
-              "description": "blend of banan, ango, pineapple, coconut and lemonade $6.49"
+              "description": "blend of banana, mango, coconut, pineapple and lemonade $6.49"
             }
           },
           {
             "meal": {
               "title": "wichit mojito",
-              "description": "lime juice, cane sugar, mint leaves, choose one orange, mango, pomegranate, passion fruit, peach $5.25",
+              "description": "lime juice, cane sugar, mint leaves, choose one orange, mango, pomegranate, passion fruit, peach $6.29",
               "id": 1046
             }
           },
           {
             "meal": {
-              "title": "wichit milk shakes",
-              "description": "  made with whole milk and ice cream :                                                                                   \n banana, strawberry, blueberry, chocolate, nutella, avocado, mango, pineapple, and peanut butter $ 6.29 add another item for $1.00",
-              "special": true,
-              "from": "beverages",
-              "order": 1,
-              "id": 1057
+              "title": "avocado smoothie",
+              "description": "made with avocado, whole milk and yorgut $6.49",
+              "id": 1515975669815
+            }
+          },
+          {
+            "meal": {
+              "title": "fresh brewed coffee",
+              "description": "$2.40",
+              "id": 1489434825079
             }
           },
           {
@@ -685,9 +696,9 @@
           },
           {
             "meal": {
-              "title": "avocado smoothie",
-              "description": "made with avocado, whole milk and yorgut $5.99",
-              "id": 1515975669815
+              "title": "hot tea",
+              "description": "$2.40",
+              "id": 1489434825084
             }
           }
         ],
@@ -709,14 +720,14 @@
             "meal": {
               "title": "california turkey wrap",
               "special": true,
-              "description": "house roated turkey, tomatoes, avocado, mayo, lettuce, apple wood smoked bacon, $9.99",
+              "description": "house roasted turkey, tomatoes, avocado, cheddar cheese, mayo, lettuce, apple wood smoked bacon, $9.99",
               "id": 1515975669810
             }
           },
           {
             "meal": {
               "title": "greek  chicken wrap",
-              "description": "romaine letuce, calamata olives, fetta cheese diced tomatoes, red onion, grilled chicken, cumcumbrs, greek dressing $9.99",
+              "description": "romaine letuce, calamata olives, fetta cheese diced tomatoes, red onion, grilled chicken, oregano, cucumbers, greek dressing $9.99",
               "from": "wraps-burgers",
               "order": 1,
               "id": 1061
@@ -725,7 +736,7 @@
           {
             "meal": {
               "title": "bafalo chicken wrap",
-              "description": "crisp chicken, bafalo sauce, diced tomatoes, letuce, blue cheese  $9.99",
+              "description": "crisp chicken, bafalo sauce, diced tomatoes, letuce, blue cheese crumbles, ranch $9.99",
               "id": 1489362044787
             }
           },
@@ -739,7 +750,7 @@
           {
             "meal": {
               "title": "chicken caesar wrap",
-              "description": "grilled chicken, romaine letuce, croutons, parm cheese, caesar dressing $9.99",
+              "description": "grilled chicken, romaine letuce, croutons, cherry tomatoes, parm cheese, caesar dressing $9.99",
               "id": 1489434825065
             }
           },
@@ -792,7 +803,7 @@
             "meal": {
               "title": "*the heart attack",
               "special": true,
-              "description": "beef burger, house made corned beef hash, fried egg, bacon, chedda cheese, letuce, tomato and onion $12.99",
+              "description": "beef burger, house made corned beef hash, fried egg, apple wood smoked  bacon, chedda cheese, letuce, tomato and onion $12.99",
               "id": 1489434825069
             }
           },
@@ -806,7 +817,7 @@
           {
             "meal": {
               "title": "-v-veggie burger",
-              "description": "made with all kind veggie and sweet potato, served with letuce and tomatoes and red onion  on brioche bread $10.99",
+              "description": "made with all kind organic veggie and sweet potato, served with letuce and tomatoes and red onion  on brioche bread $10.99",
               "id": 1489434825070
             }
           },
@@ -845,7 +856,7 @@
             "meal": {
               "title": "soup options",
               "noBorder": true,
-              "description": "fresh tomato basil, chicken noddle, clam chowder.",
+              "description": "fresh tomato basil, chicken noddle, clam chowder, chili",
               "id": 1515974142262
             }
           },
@@ -853,7 +864,7 @@
             "meal": {
               "title": "sandwich options",
               "noBorder": true,
-              "description": "grilled cheese, blt, tuna melted, ham & swiis, turkey & gouda, pastrami & swiss .",
+              "description": "grilled cheese, blt, tuna melted, ham & swiis, turkey & gouda, pastrami & swiss, grilled chicken with letuce and tomato on house bread ",
               "id": 1515974142263
             }
           },
@@ -869,7 +880,7 @@
           {
             "meal": {
               "title": "beef chili",
-              "description": "cup $5.29 bowl $ 6.29",
+              "description": "cup $5.59 bowl $ 6.59",
               "from": "mix-and-match",
               "id": 1489411432271
             }
@@ -942,7 +953,7 @@
           },
           {
             "meal": {
-              "title": "apple & brie grilled cheese ",
+              "title": "apple & brie grilled cheese",
               "description": " sliced apple, melted brie cheese on multigrain bread served with house chips  $ 9.99",
               "id": 1516232640045
             }

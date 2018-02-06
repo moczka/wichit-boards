@@ -220,7 +220,7 @@ window.onload = function(){
     }
 
     function getActivePage() {
-      return parseInt(localStorage.getItem('activePage')) || 1;
+      return parseInt(localStorage.getItem('activePage')) || 0;
     }
 
     function addMeal() {

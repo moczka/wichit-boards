@@ -574,7 +574,7 @@
             "meal": {
               "title": "signature frozen drinks",
               "special": true,
-              "description": "($6.29) frozen passion fruit, frozen mango, frozen pomegranate, frozen orange, frozen strawberry, frozen peach, frozen blueberry, frozen caramel expresso",
+              "description": "($6.29) frozen passion fruit, frozen mango, frozen pomegranate, frozen orange, frozen strawberry, frozen peach, frozen blueberry, frozen caramel expresso, frozen pineapple",
               "id": 1516849530137
             }
           },
@@ -598,15 +598,6 @@
           },
           {
             "meal": {
-              "title": "lemonade",
-              "from": "beverages",
-              "order": 1,
-              "id": 1039,
-              "description": " $3.99"
-            }
-          },
-          {
-            "meal": {
               "title": "peach lemonade ",
               "description": " $5.99",
               "id": 1040
@@ -625,6 +616,15 @@
               "title": "mango lemonade",
               "description": "5.99",
               "id": 10492
+            }
+          },
+          {
+            "meal": {
+              "title": "lemonade",
+              "from": "beverages",
+              "order": 1,
+              "id": 1039,
+              "description": " $3.99"
             }
           },
           {
@@ -683,7 +683,7 @@
           {
             "meal": {
               "title": "fresh brewed coffee",
-              "description": "$2.40",
+              "description": "$2.55",
               "id": 1489434825079
             }
           },
@@ -697,7 +697,7 @@
           {
             "meal": {
               "title": "hot tea",
-              "description": "$2.40",
+              "description": "$2.85",
               "id": 1489434825084
             }
           }

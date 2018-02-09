@@ -5,7 +5,7 @@
         "title": "breakfast sandwiches",
         "subtitle": "served all day",
         "name": "breakfast-sandwiches",
-        "description": "all breakfast sandwiches are made with two farm fresh eggs substitute egg whites\n2, extra egg $1.99, avocado $2, xtra meat $2, luten free bread $2",
+        "description": "all breakfast sandwiches are made with two farm fresh eggs substitute egg whites\n2, extra egg $1.99, avocado $2, extra meat $2, luten free bread $2",
         "warning": "ASTERISK (*) FOOD ITEMS  SUCH AS HAMBURGER, STEAK OR EGGS COOKED TO ORDER, RAW FISH, SHELLFISH AND RAW EGG CAESAR SALAD MAY BE SERVED RAW OR UNDERCOOKED. CONSUMING UNDERCOOKED MEATS, POULTRY OR RAW FOODS MAY INCREASE THE RISK OF FOOD BORNE ILLNES, BEFORE PLACING YOUR ORDER, PLEASE NOTIFY US OF ANY FOOD RELATED ALLERGIES YOU MAY HAVE..",
         "page": 1,
         "meals": [
@@ -180,7 +180,7 @@
           {
             "meal": {
               "title": "the newbury",
-              "description": "grilled chicken, applewood smoked bacon, baby kale, poblano ranch dressing, guacamole, pepper jack cheese on a bagette $10.28",
+              "description": "grilled chicken, applewood smoked bacon, baby kale, poblano ranch dressing, guacamole, pepper jack cheese on a bagette $10.29",
               "special": true,
               "from": "lunch-menu",
               "order": 1,
@@ -190,7 +190,7 @@
           {
             "meal": {
               "title": "antipasto",
-              "description": "grilled asparagus, prosciutto, fresh mozzarella, extra virgin olive oil, balsamic glaze, sliced pepperoncinni on a ciabatta $10.28",
+              "description": "grilled asparagus, prosciutto, fresh mozzarella, extra virgin olive oil, balsamic glaze, sliced pepperoncinni on a ciabatta $10.29",
               "from": "lunch-menu",
               "order": 1,
               "id": 1010
@@ -199,7 +199,7 @@
           {
             "meal": {
               "title": "spicy tuna maki",
-              "description": "sushi inspired tuna salad, dried nori, cucumber, avocado, cusabi aioli, multigrain bread  $9.99",
+              "description": "sushi inspired tuna salad, dried nori, cucumber, avocado, cusabi aioli, multigrain bread  $10.29",
               "from": "lunch-menu",
               "order": 1,
               "id": 1011
@@ -208,7 +208,7 @@
           {
             "meal": {
               "title": "so. cal",
-              "description": "house roasted turkey, apple wood smoked bacon, avocado, mojo mustard spread on a brioche bun $10.28",
+              "description": "house roasted turkey, apple wood smoked bacon, avocado, mojo mustard spread on a brioche bun $10.29",
               "from": "lunch-menu",
               "order": 1,
               "id": 1012
@@ -217,7 +217,7 @@
           {
             "meal": {
               "title": "union club",
-              "description": "all natural chicken salad, apple wood smoked bacon, vermont cheddar, leaf lettuce, chipotle aioli, ciabatta $10.28",
+              "description": "all natural chicken salad, apple wood smoked bacon, vermont cheddar, leaf lettuce, chipotle aioli, ciabatta $10.29",
               "from": "lunch-menu",
               "order": 1,
               "id": 1013
@@ -235,7 +235,7 @@
           {
             "meal": {
               "title": "-v-caprese",
-              "description": "fresh mozzarella, ripe tomato, extra virgin olive oil fresh basil, balsamic glaze on a ciabatta $10.28",
+              "description": "fresh mozzarella, ripe tomato, extra virgin olive oil fresh basil, balsamic glaze on a ciabatta $10.29",
               "from": "lunch-menu",
               "order": 1,
               "id": 1015
@@ -244,7 +244,7 @@
           {
             "meal": {
               "title": "-v-gimme garden",
-              "description": "asparagus, roasted red peppers, portabella mushroom, carrot laces, organic greens, goat cheese, balsamic glaze on multigrain bread $9.99",
+              "description": "asparagus, roasted red peppers, portabella mushroom, carrot laces, organic greens, goat cheese, balsamic glaze on multigrain bread $10.29",
               "from": "lunch-menu",
               "order": 1,
               "id": 1016
@@ -331,7 +331,7 @@
           {
             "meal": {
               "title": "chicken katsu",
-              "description": "fried chicken tempura, crispy sweet potato, carrot laces, leaf lettuce, tonkatsu sauce, brioche roll $10.28",
+              "description": "fried chicken tempura, crispy sweet potato, carrot laces, leaf lettuce, tonkatsu sauce, brioche roll $10.29",
               "from": "hot-sandwiches",
               "order": 1,
               "id": 1019
@@ -358,7 +358,7 @@
           {
             "meal": {
               "title": "cubano",
-              "description": "seasoned pulled pork, virginia ham, swiss, dill pickles, mojo mustard, pressed baguette $10.28",
+              "description": "seasoned pulled pork, virginia ham, swiss, dill pickles, mojo mustard, pressed baguette $10.29",
               "from": "hot-sandwiches",
               "order": 1,
               "id": 1021
@@ -367,7 +367,7 @@
           {
             "meal": {
               "title": "goudapest",
-              "description": "chicken breast, gouda cheese, caramelized onion, pesto, pressed on house rustic $10.28",
+              "description": "chicken breast, gouda cheese, caramelized onion, pesto, pressed on house rustic $10.29",
               "from": "hot-sandwiches",
               "order": 1,
               "id": 1022
@@ -385,7 +385,7 @@
           {
             "meal": {
               "title": "carolina pork",
-              "description": "smoked pulled pork, barbeque sauce, poblano-kale slaw, brioche roll $10.28",
+              "description": "smoked pulled pork, barbeque sauce, poblano-kale slaw, brioche roll $10.29",
               "from": "hot-sandwiches",
               "order": 1,
               "id": 1025
@@ -394,7 +394,7 @@
           {
             "meal": {
               "title": "-v-orchid hill",
-              "description": "fire grilled pear, apple sliced, dried cranberries, arugula, brie cheese pressed on mutligrain $10.28",
+              "description": "fire grilled pear, apple sliced, dried cranberries, arugula, brie cheese pressed on mutligrain $10.29",
               "from": "hot-sandwiches",
               "order": 1,
               "id": 1026
@@ -430,14 +430,14 @@
           {
             "meal": {
               "title": "the prudential",
-              "description": "hot pastrami with melted swiis cheese and mustard on brioche roll $10.28",
+              "description": "hot pastrami with melted swiis cheese and mustard on brioche roll $10.29",
               "id": 1515348622276
             }
           },
           {
             "meal": {
               "title": "the  turkey rachel",
-              "description": "house rusted turkey, melted swiis cheese, thousend island, coleslaw on marble rye bread  $10.28",
+              "description": "house rusted turkey, melted swiis cheese, thousend island, coleslaw on marble rye bread  $10.29",
               "id": 1515975669811
             }
           },
@@ -511,7 +511,7 @@
           {
             "meal": {
               "title": "kale caesar bowl",
-              "description": "organic  kale, chopped romaine, cherry tomatoes, crouton, armesan cheese, a hint of lime juice and caesar dressing $9.99",
+              "description": "organic  kale, chopped romaine, cherry tomatoes, crouton, parmesan cheese, a hint of lime juice and caesar dressing $9.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1034
@@ -539,7 +539,7 @@
             "meal": {
               "title": "the taco bowl",
               "special": true,
-              "description": " chopped romaine, black beans, roasted corn, garden peppers, avocado tortilla strip, topped with house made chili, tossed on poblano ranch dressing $11.99",
+              "description": " chopped romaine, black beans, roasted corn, julienne garden peppers, avocado tortilla strip, topped with house made chili, tossed on poblano ranch dressing $11.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1037
@@ -555,7 +555,7 @@
           {
             "meal": {
               "title": "the cobb bowl",
-              "description": " chopped romaine lettuce, bacon bits, blue cheese crumbs, cherry tomatoes, garden peppers, cucumbers, hard boiled egg, with balsamic dressing $ 9.99",
+              "description": " chopped romaine lettuce, bacon bits, blue cheese crumbs, cherry tomatoes, julienne garden peppers, cucumbers, hard boiled egg, with balsamic dressing $ 9.99",
               "id": 1515348622278
             }
           }
@@ -629,7 +629,7 @@
           },
           {
             "meal": {
-              "title": "fountain drink",
+              "title": "fountain drink ",
               "description": "$2.45",
               "id": 1041
             }
@@ -849,7 +849,7 @@
         "subtitle": "choose a combination:",
         "name": "mix-and-match",
         "warning": "ASTERISK (*) FOOD ITEMS  SUCH AS HAMBURGER, STEAK OR EGGS COOKED TO ORDER, RAW FISH, SHELLFISH AND RAW EGG CAESAR SALAD MAY BE SERVED RAW OR UNDERCOOKED. CONSUMING UNDERCOOKED MEATS, POULTRY OR RAW FOODS MAY INCREASE THE RISK OF FOOD BORNE ILLNES, BEFORE PLACING YOUR ORDER, PLEASE NOTIFY US OF ANY FOOD RELATED ALLERGIES YOU MAY HAVE..",
-        "description": "a choice of half a sandwich or house salad with a choice of soup. served with chips and pickles. $10.28",
+        "description": "a choice of half a sandwich or house salad with a choice of soup. served with chips and pickles. $10.29",
         "page": 7,
         "meals": [
           {

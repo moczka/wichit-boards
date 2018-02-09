@@ -197,6 +197,10 @@ window.onload = function(){
 
       if(role === "add"){
          addMeal();
+      }else if(role==="clear"){
+        if(confirm("Are you Sure?")){
+          localStorage.clear();
+        }
       }
 
     }

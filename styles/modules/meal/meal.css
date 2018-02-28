@@ -2,20 +2,21 @@
   border-top: 3px solid #ffffcc;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   letter-spacing: -1px;
-  padding: 0.6em 0;
+  padding: 0.4em 0;
   color: #ffffcc;
 }
 .meal.noBorder {
   border-top: none;
+  padding: 0.2em 0;
 }
 
 .meal-title{
   float: left;
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-weight: 300;
   color: #d62222;
-  line-height: 0.60;
+  line-height: 100%;
   text-transform: inherit;
 }
 .meal-title:after{
@@ -29,7 +30,7 @@
 }
 
 .meal-description{
-  font-size: inherit;
+  font-size: 98%;
   font-style: inherit;
   text-transform: inherit;
   color: inherit;
@@ -102,11 +103,12 @@
   margin-right: 0.15em;
   height: 1.15em;
   width: 1.15em;
-  top: -0.30em;
+  top: -0.20em;
   left: 0;
 }
 .meal-is-separator{
-  font-size: 1.5em;
+  font-size: 1.1em;
+  line-height: 100%;
   font-family: Impact, sans-serif;
   color: #fff;
 }

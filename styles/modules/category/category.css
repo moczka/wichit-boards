@@ -12,19 +12,19 @@
 }
 
 .category-title{
-  font-size: 2.3em;
+  font-size: 2.0em;
   font-family: Impact, sans-serif;
   color: #fff;
 }
 .category-subtitle{
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 .category-description{
   color: #ffffcc;
   letter-spacing: -1px;
   padding-bottom: 10px;
   font-family: inherit;
-  font-size: inherit;
+  font-size: 95%;
   text-transform: inherit;
 }
 
@@ -58,7 +58,8 @@
 }
 
 .food-warning > p{
-  font-size: 0.8em;
+  display: inline;
+  font-size: 0.7em;
 }
 
 /* MODULE STATES */

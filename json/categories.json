@@ -226,7 +226,7 @@
           {
             "meal": {
               "title": "*ny muscle",
-              "description": "roast sirloin, vermont chedar, baby arugula, house pickled onion, horseradish- rosemary sauce, baguette  $11.99",
+              "description": "roast sirloin, vermont cheddar, baby arugula, house pickled onion, horseradish- rosemary sauce, baguette  $11.99",
               "from": "lunch-menu",
               "order": 1,
               "id": 1014
@@ -254,7 +254,7 @@
             "meal": {
               "title": "-v-the copley",
               "special": true,
-              "description": " roasted eggplant, hummus, extra virgin olive oil, baby arurula, roasted red peppers, balsamic glase on ciabatta  bread $10.99",
+              "description": " deeped fried eggplant , hummus, extra virgin olive oil, baby arurula, roasted red peppers, balsamic glase on ciabatta  bread $10.99",
               "id": 1489347585180
             }
           },
@@ -276,8 +276,8 @@
           },
           {
             "meal": {
-              "title": "the triple deck club",
-              "description": "house roasted turkey, apple wood smoked bacon, mayo, lettuce and tomatoes, on house rustic bread, $10.99",
+              "title": "chicken  triple deck club",
+              "description": "grilled chicken, apple wood smoked bacon, avocado, mayo, lettuce and tomatoes, on house rustic bread, $10.99",
               "id": 1515200146595
             }
           },
@@ -296,6 +296,20 @@
               "id": 1515971293479,
               "name": "note",
               "removed": true
+            }
+          },
+          {
+            "meal": {
+              "title": "avocado triple deck club ",
+              "description": " sliced avocado, house roasted turkey, apple wood smoked bacon, mayo, lettuce and tomatoes, on house rustic bread $11.99",
+              "id": 1519843897294
+            }
+          },
+          {
+            "meal": {
+              "title": "way to paradise ",
+              "description": "thin sliced pastrami, prosciutto and virginia ham , vermont cheddar cheese, crashed fresh peppers, lettuce and tomatoes, hummus  on ciabatta  bread $11.99",
+              "id": 1519843897295
             }
           }
         ],
@@ -358,7 +372,7 @@
           {
             "meal": {
               "title": "cubano",
-              "description": "seasoned pulled pork, virginia ham, swiss cheese, dill pickles, mojo mustard, pressed on a baguette $10.29",
+              "description": "smoked  pulled pork, virginia ham, swiss cheese, dill pickles, mojo mustard, pressed on a baguette $10.29",
               "from": "hot-sandwiches",
               "order": 1,
               "id": 1021
@@ -384,7 +398,7 @@
           },
           {
             "meal": {
-              "title": "caroline bbq pork",
+              "title": "carolina bbq pork",
               "description": "smoked pulled pork, barbeque sauce, poblano-kale slaw, brioche roll $10.29",
               "from": "hot-sandwiches",
               "order": 1,
@@ -511,7 +525,7 @@
           {
             "meal": {
               "title": "harvest bowl",
-              "description": "organic greens, sun-dried cranberries, roasted pear, goat chees, roasted walnuts and cranberry vinaigrette $ 9.99",
+              "description": "organic greens, sun-dried cranberries, roasted pear, goat cheese, roasted walnuts and cranberry vinaigrette $ 9.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1033
@@ -520,7 +534,7 @@
           {
             "meal": {
               "title": "the antipasto bowl",
-              "description": "chopped romaine, cherry tomatoes, roasted red peppers, proscuitto and virginia ham ,calamata olives, roasted eggplant, pepperoncini and fetta cheese, balsamic vinaigrette $11.99",
+              "description": "chopped romaine, cherry tomatoes, roasted red peppers, proscuitto and virginia ham ,calamata olives, roasted eggplant, pepperoncini and fetta cheese, balsamic vinaigrette $12.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1034
@@ -529,7 +543,7 @@
           {
             "meal": {
               "title": "the caprese",
-              "description": "vine ripe tomatoes, mix greens, extra virgin olive oil, fresh mozzarella, basil, oregano flaks, balsamic glaze $9.99",
+              "description": "vine ripe tomatoes, organic  greens, extra virgin olive oil, fresh mozzarella, basil, oregano flaks, balsamic glaze $9.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1035
@@ -745,14 +759,14 @@
           {
             "meal": {
               "title": "bafalo chicken wrap",
-              "description": "crisp chicken, bafalo sauce, diced tomatoes, chopped  letuce, blue cheese dressing $9.99",
+              "description": "crisp chicken, bafalo sauce, diced tomatoes, chopped  letuce, ranch dressing $9.99",
               "id": 1489362044787
             }
           },
           {
             "meal": {
               "title": "chicken burrito wrap",
-              "description": " filled with grilled chicken, jasmine rice, beans, cheese, chopped romaine and pico de gallo $10.29",
+              "description": " filled with grilled chicken, jasmine rice, beans, melted cheddar cheese grilled peppers and onions,  pico de gallo on a wrap $10.99",
               "id": 1489434825063
             }
           },
@@ -774,7 +788,7 @@
           {
             "meal": {
               "title": "steak burrito wrap",
-              "description": " angus steak, jasmine rice, beans ,pico de gallo, grilled onions, grilled peppers, melted cheddar chesse  $11.99",
+              "description": " angus steak, jasmine rice, beans ,pico de gallo, grilled onions and peppers, melted cheddar chesse  $11.99",
               "id": 1489434825067
             }
           },
@@ -846,6 +860,13 @@
               "id": 1515973030056,
               "name": "Title Here",
               "removed": true
+            }
+          },
+          {
+            "meal": {
+              "title": "monster burger ",
+              "description": "piled high with  patty burger, smoked bbq pulled pork, fried egg, melted gouda cheese, lettuce, tomatoes, and  chipotle aiole sauce on a bun  $12.99 ",
+              "id": 1519843897296
             }
           }
         ],
@@ -919,7 +940,7 @@
           },
           {
             "meal": {
-              "title": "north caroline  hot dog",
+              "title": "north carolina  hot dog",
               "description": "grilled frank dog, shopped red onion, diced tomatoes, bacon bits, bbq sauce, golden mustard served with house chips and pickles  $ 9.99",
               "id": 1515975669819
             }
@@ -942,7 +963,7 @@
           {
             "meal": {
               "title": "famous wings",
-              "description": "fried chispy chicken wings tossed in  ( plain, bufalo, bbq, honey bbq ) $9.99",
+              "description": "fried chispy chicken wings tossed in  ( plain, bufalo, bbq or honey bbq ) $9.99",
               "id": 1515442332994
             }
           },

@@ -1,0 +1,28 @@
+{
+  "name": "wichit-boards",
+  "version": "1.0.0",
+  "description": "The menu boards for the Wichit Restaurant on Newbury St in Boston, MA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss styles/main.scss public/css/main.css",
+    "build-pdf": "node scripts/generatePdf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moczka/wichit-boards.git"
+  },
+  "keywords": [
+    "menu",
+    "js"
+  ],
+  "author": "Javier S Guerrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moczka/wichit-boards/issues"
+  },
+  "homepage": "https://github.com/moczka/wichit-boards#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}

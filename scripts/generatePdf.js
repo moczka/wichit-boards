@@ -10,9 +10,8 @@ const PAGE = {
 
 fs.readdir(INPUT, (err, files) => {
   const exportsMap = {};
-   console.log("Convertion has started...");
    const images = files.filter(file => {
-    if (/pag\d+-part[1-2].pdf/.test(file)) {
+    if (/page\d+-part[1-2].pdf/.test(file)) {
       return true;
     } else if (file.includes('pdf')) {
       console.log(`Check ${file} it doesn't follow the page#-part# format!`);
@@ -20,6 +19,7 @@ fs.readdir(INPUT, (err, files) => {
     }
     return false;
    })
+   console.log("Convertion has started...");
    images.forEach((image) => {
     if (image.includes('pdf')) {
       createImage(image).then(createdImage => {

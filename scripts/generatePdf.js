@@ -4,8 +4,8 @@ const fs = require('fs');
 const INPUT = `${__dirname}/../pdf`;
 const OUTPUT = `${__dirname}/../pdf/bundled`;
 const PAGE = {
-  PART_1: {width: 2550, height: 4200},
-  PART_2: {width: 2550, height: 1540}
+  PART_1: {width: 3300, height: 5100},
+  PART_2: {width: 3300, height: 2635}
 };
 
 fs.readdir(INPUT, (err, files) => {
@@ -25,6 +25,8 @@ fs.readdir(INPUT, (err, files) => {
    });
    if (missingPairFiles.length) {
     console.log("Some files have missing matching pairs. Take a look at: ", missingPairFiles.join("\n "));
+   } else {
+     console.log("All files are in place, converting...");
    }
 });
 

@@ -98,7 +98,6 @@ textarea{
 /* PRINT QUERY */
 @media print {
   body{
-    width: 1100px;
     font-size: 28px;
   }
   .toolbar{

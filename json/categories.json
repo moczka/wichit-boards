@@ -21,7 +21,7 @@
           {
             "meal": {
               "title": "*green eggs",
-              "description": "smoked ham, basil walnut pesto, vermont cheddar,  two farm fresh egg on house rustic toast $6.29",
+              "description": "smoked ham, basil walnut pesto, vermont cheddar, two farm fresh egg on house rustic toast $6.29",
               "from": "breakfast-sandwiches",
               "order": 1,
               "id": 1003
@@ -215,14 +215,6 @@
           },
           {
             "meal": {
-              "title": "-v-the copley",
-              "special": true,
-              "description": " deep fried eggplant , hummus, extra virgin olive oil, baby arugula, roasted red peppers, balsamic glaze on a ciabatta  bread $10.99",
-              "id": 1489347585180
-            }
-          },
-          {
-            "meal": {
               "title": "the boylston",
               "description": "farm raised roasted pulled chicken, applewood smoked bacon, garlic aioli, lettuce and tomatoes, cheddar cheese, hummus on a ciabatta bread $10.99 ",
               "id": 1515200146594
@@ -253,7 +245,7 @@
           {
             "meal": {
               "title": "way to paradise ",
-              "description": "thin sliced pastrami, prosciutto and virginia ham , vermont cheddar cheese, crashed fresh peppers, lettuce and tomatoes, and hummus  on a ciabatta  bread $11.99",
+              "description": "thin sliced pastrami, prosciutto and virginia ham, vermont cheddar cheese, crashed fresh peppers, lettuce and tomatoes, and hummus  on a ciabatta  bread $11.99",
               "id": 1519843897295
             }
           }
@@ -461,7 +453,7 @@
           {
             "meal": {
               "title": "the antipasto bowl",
-              "description": "chopped romaine, cherry tomatoes, roasted red peppers, proscuitto and virginia ham ,calamata olives, roasted eggplant, pepperoncini and fetta cheese, balsamic vinaigrette $12.99",
+              "description": "chopped romaine, cherry tomatoes, roasted red peppers, proscuitto and virginia ham, calamata olives, roasted eggplant, pepperoncini and fetta cheese, balsamic vinaigrette $12.99",
               "from": "fresh-salands",
               "order": 1,
               "id": 1034
@@ -498,7 +490,7 @@
           {
             "meal": {
               "title": "tofu noddle bowl",
-              "description": "grilled tofu, asian noddle, cabbage , cherry tomatoes, avocado, cucumber, sesame seeds tossed on asian dressing  $ 9.99",
+              "description": "grilled tofu, asian noddle, cabbage, cherry tomatoes, avocado, cucumber, sesame seeds tossed on asian dressing  $ 9.99",
               "id": 1515348622277
             }
           },
@@ -616,7 +608,7 @@
           {
             "meal": {
               "title": "expresso ",
-              "description": "$2.45,  extra shot $1",
+              "description": "$2.45, extra shot $1",
               "id": 1519950027543
             }
           },
@@ -697,7 +689,7 @@
           {
             "meal": {
               "title": "chicken burrito wrap",
-              "description": " filled with grilled chicken, jasmine rice, beans, melted cheddar cheese grilled peppers and onions,  pico de gallo on a wrap $9.99",
+              "description": " filled with grilled chicken, jasmine rice, beans, melted cheddar cheese grilled peppers and onions, pico de gallo on a wrap $9.99",
               "id": 1489434825063
             }
           },
@@ -719,7 +711,7 @@
           {
             "meal": {
               "title": "steak burrito wrap",
-              "description": " angus steak, jasmine rice, beans,pico de gallo, grilled onions and peppers, melted cheddar chesse  $11.99",
+              "description": " angus steak, jasmine rice, beans, pico de gallo, grilled onions and peppers, melted cheddar chesse  $11.99",
               "id": 1489434825067
             }
           },
@@ -915,7 +907,7 @@
             "meal": {
               "title": "dipping sauces",
               "special": true,
-              "description": "chipotle aioli, house sauce, bbq, japanese bbq, mojo mustard, honey dijon, sriracha ketchup. all sandwichs are served with one dipping sauce. extra sauce $0,59",
+              "description": "chipotle aioli, house sauce, bbq, japanese bbq, mojo mustard, honey dijon, sriracha ketchup. all sandwichs are served with one dipping sauce. extra sauce $0.59",
               "id": 1489446864335
             }
           }

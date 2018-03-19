@@ -57,11 +57,13 @@
   </script>
   <script id="meal-template" type="text/template">
 
-      <div class="meal-content cf">
-        <h3 class="meal-title {{ meal.special? 'meal-is-special' : '' }} {{ meal.separator? 'meal-is-separator' : ''}}">{{ meal.title }}</h3>
-        <% if( meal.description ){ %>
-          <p class="meal-description">{{ meal.description }}</p>
-        <% } %>
+      <div class="meal-content">
+        <p class="meal-description">
+        <span class="meal-title {{ meal.special? 'meal-is-special' : '' }} {{ meal.separator? 'meal-is-separator' : ''}}">{{ meal.title }}</span>
+          <% if( meal.description ){ %>
+            {{ meal.description }}
+          <% } %>
+        </p>
       </div>
       <div class="edit-box">
         <input type="text" class="meal-title meal-edit-title" value="{{ meal.title }}">

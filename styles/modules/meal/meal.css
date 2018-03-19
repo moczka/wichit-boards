@@ -10,8 +10,12 @@
   padding: 0.2em 0;
 }
 
+.meal-content {
+  overflow-wrap: break-word;
+}
+
 .meal-title{
-  display: inline;
+  display: inline-block;
   font-size: 1.1em;
   line-height: 1.2em;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -30,8 +34,7 @@
 }
 
 .meal-description{
-  display: inline;
-  font-size: 98%;
+  font-size: 93%;
   line-height: 1.2em;
   font-style: inherit;
   text-transform: inherit;

@@ -12,7 +12,7 @@
 }
 
 .category-title{
-  font-size: 2.0em;
+  font-size: 1.8em;
   font-family: Impact, sans-serif;
   color: #fff;
 }
@@ -24,7 +24,7 @@
   letter-spacing: -1px;
   padding-bottom: 10px;
   font-family: inherit;
-  font-size: 95%;
+  font-size: 90%;
   line-height: 1.2em;
   text-transform: inherit;
 }
@@ -59,6 +59,7 @@
 }
 
 .food-warning > p{
+  line-height: 1.2em;
   display: inline;
   font-size: 0.7em;
 }
